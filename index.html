@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>ITI Exam Theory 2026 · Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface2: #F1F5F9;
+            --text: #0F172A;
+            --sub: #475569;
+            --border: #E2E8F0;
+            --primary: #2563EB;
+            --primary-light: #3B82F6;
+            --sky: #38BDF8;
+            --shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+            --shadow-hover: 0 16px 48px rgba(37, 99, 235, 0.15);
+            --radius: 18px;
+            --radius-full: 50px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --glass-bg: rgba(255, 255, 255, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --font: 'Inter', -apple-system, sans-serif;
+            --font-heading: 'Poppins', 'Inter', sans-serif;
+            --section-gap: 60px;
+            --card-gap: 24px;
+        }
+
+        body.dark {
+            --bg: #0F172A;
+            --surface: #1E293B;
+            --surface2: #2D3A52;
+            --text: #F1F5F9;
+            --sub: #94A3B8;
+            --border: #334155;
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 16px 48px rgba(37, 99, 235, 0.25);
+            --glass-bg: rgba(15, 23, 42, 0.82);
+            --glass-border: rgba(255, 255, 255, 0.06);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.4s, color 0.4s;
+            padding-bottom: 80px;
+            overflow-x: hidden;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== GLASS NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 14px 0;
+            transition: background 0.4s;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text);
+            flex-shrink: 0;
+        }
+        .nav-logo i {
+            color: var(--primary);
+            font-size: 24px;
+        }
+        .nav-logo span {
+            color: var(--primary);
+        }
+
+        .nav-search {
+            flex: 1;
+            max-width: 500px;
+            min-width: 180px;
+            position: relative;
+        }
+        .nav-search input {
+            width: 100%;
+            padding: 12px 20px 12px 48px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 14px;
+            outline: none;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .nav-search input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+        .nav-search .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--sub);
+            font-size: 16px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .nav-btn {
+            padding: 10px 18px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: transparent;
+            color: var(--sub);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font);
+        }
+        .nav-btn:hover {
+            background: var(--surface2);
+            color: var(--text);
+        }
+        .nav-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+        .nav-btn.primary:hover {
+            background: var(--primary-light);
+            transform: scale(0.96);
+        }
+        .dark-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dark-toggle:hover {
+            background: var(--surface2);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(145deg, #0F172A 0%, #1E3A5F 45%, #2563EB 100%);
+            border-radius: var(--radius);
+            padding: 70px 50px;
+            margin: 32px 0 60px;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            bottom: -30px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.10);
+            pointer-events: none;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: -50px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.06);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        .hero-content .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            padding: 6px 20px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sky);
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 44px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .hero-content h1 span {
+            color: var(--sky);
+        }
+        .hero-content p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 28px;
+            max-width: 440px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .hero-btn {
+            padding: 14px 34px;
+            border-radius: var(--radius-full);
+            border: none;
+            font-family: var(--font);
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.3px;
+        }
+        .hero-btn.primary {
+            background: white;
+            color: #0F172A;
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.15);
+        }
+        .hero-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.25);
+        }
+        .hero-btn.secondary {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .hero-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .hero-illustration {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 120px;
+            opacity: 0.12;
+            pointer-events: none;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 28px;
+                min-height: 280px;
+            }
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            .hero-illustration {
+                font-size: 60px;
+                right: 20px;
+            }
+        }
+
+        /* ===== STATISTICS ===== */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .stat-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px 16px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .stat-card .icon {
+            font-size: 28px;
+            color: var(--primary);
+            opacity: 0.4;
+            margin-bottom: 6px;
+        }
+        .stat-card .number {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .stat-card .label {
+            font-size: 14px;
+            color: var(--sub);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+        .section-header h2 i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        .section-header .count {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sub);
+            background: var(--surface2);
+            padding: 6px 20px;
+            border-radius: var(--radius-full);
+        }
+
+        /* ===== PRACTICAL CARDS ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .practical-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px 24px 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .practical-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
+        }
+        .practical-card.hidden-card {
+            display: none;
+        }
+
+        .practical-card .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .practical-card .card-top h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+            line-height: 1.3;
+        }
+        .practical-card .card-top .badge {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 4px 16px;
+            border-radius: 30px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.3px;
+        }
+
+        .practical-card .mat-list {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: var(--sub);
+            margin: 10px 0 14px;
+            border-left: 4px solid var(--primary);
+            line-height: 1.5;
+        }
+        .practical-card .mat-list strong {
+            color: var(--text);
+        }
+
+        .practical-card .step-list {
+            padding-left: 20px;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 6px 0 14px;
+        }
+        .practical-card .step-list li {
+            margin-bottom: 4px;
+        }
+
+        .practical-card .viva-box {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin: 12px 0;
+            border-left: 4px solid var(--primary);
+        }
+        .practical-card .viva-box .viva-title {
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+        .practical-card .viva-item {
+            padding: 4px 0;
+            font-size: 13px;
+            border-bottom: 1px dashed var(--border);
+        }
+        .practical-card .viva-item:last-child {
+            border-bottom: none;
+        }
+        .practical-card .viva-item strong {
+            color: var(--text);
+        }
+
+        .practical-card .exam-points {
+            background: #fef7e6;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 13px;
+            border: 1px solid #f1dba8;
+            color: #3f3a1a;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+        body.dark .practical-card .exam-points {
+            background: #2d281a;
+            border-color: #5f531a;
+            color: #f5eab0;
+        }
+        .practical-card .exam-points strong {
+            color: #b48b2c;
+        }
+        body.dark .practical-card .exam-points strong {
+            color: #e5c65a;
+        }
+
+        .practical-card .progress-wrap {
+            margin: 12px 0 8px;
+        }
+        .practical-card .progress-wrap .label-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--sub);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .practical-card .progress-track {
+            height: 6px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .practical-card .progress-track .fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--sky));
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .practical-card .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 14px;
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+        .practical-card .card-footer .q-count {
+            font-size: 12px;
+            color: var(--sub);
+            font-weight: 500;
+        }
+        .practical-card .card-footer .open-btn {
+            padding: 6px 22px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .practical-card .card-footer .open-btn:hover {
+            background: var(--primary-light);
+            transform: scale(0.96);
+        }
+
+        /* ===== REVISION SECTION ===== */
+        .revision-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 28px 28px;
+            margin: 0 0 60px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .revision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .revision-item {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 14px 18px;
+            border-left: 4px solid var(--primary);
+            font-size: 13px;
+            line-height: 1.5;
+            transition: var(--transition);
+        }
+        .revision-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow);
+        }
+        .revision-item strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 4px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* ===== MOCK TEST ===== */
+        .quiz-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 28px 28px;
+            margin-bottom: 60px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0 20px;
+        }
+        .quiz-btn {
+            padding: 10px 24px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .quiz-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .quiz-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .quiz-btn.primary-btn {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .quiz-btn.primary-btn:hover {
+            background: var(--primary-light);
+        }
+
+        .quiz-container {
+            margin-top: 20px;
+            padding: 24px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            display: none;
+        }
+        .quiz-container.active {
+            display: block;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            gap: 8px;
+        }
+        .quiz-timer {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ea4335;
+        }
+        .quiz-progress {
+            font-size: 15px;
+            color: var(--sub);
+            font-weight: 500;
+        }
+
+        .quiz-question {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .quiz-options-list label {
+            display: block;
+            padding: 12px 18px;
+            margin: 6px 0;
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+        .quiz-options-list label:hover {
+            border-color: var(--primary);
+        }
+        .quiz-options-list input[type="radio"] {
+            margin-right: 12px;
+            accent-color: var(--primary);
+        }
+
+        .quiz-result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            display: none;
+        }
+        .quiz-result.active {
+            display: block;
+        }
+
+        /* ===== CERTIFICATE ===== */
+        .certificate-box {
+            margin-top: 18px;
+            padding: 24px;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 2px solid #F59E0B;
+            text-align: center;
+            display: none;
+        }
+        .certificate-box.active {
+            display: block;
+        }
+        .certificate-box .cert-icon {
+            font-size: 56px;
+            color: #F59E0B;
+        }
+        .certificate-box .cert-title {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 4px 0;
+        }
+        .certificate-box .cert-btn {
+            margin-top: 14px;
+            padding: 10px 30px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .certificate-box .cert-btn:hover {
+            background: var(--primary-light);
+            transform: scale(0.96);
+        }
+
+        /* ===== AI SECTION ===== */
+        .ai-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 28px 28px;
+            margin-bottom: 60px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .ai-chat {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+        .ai-chat input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 14px;
+            min-width: 180px;
+            outline: none;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .ai-chat input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+        .ai-chat button {
+            padding: 12px 32px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            font-family: var(--font);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ai-chat button:hover {
+            background: var(--primary-light);
+            transform: scale(0.96);
+        }
+
+        .ai-response {
+            margin-top: 18px;
+            padding: 18px 22px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+            display: none;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        .ai-response.active {
+            display: block;
+        }
+
+        /* ===== BOTTOM NAV ===== */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--glass-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-top: 1px solid var(--glass-border);
+            padding: 8px 0 env(safe-area-inset-bottom, 10px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            text-decoration: none;
+            color: var(--sub);
+            font-size: 10px;
+            font-weight: 600;
+            padding: 6px 18px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-family: var(--font);
+            letter-spacing: 0.3px;
+        }
+        .bottom-nav .nav-item i {
+            font-size: 22px;
+            transition: var(--transition);
+        }
+        .bottom-nav .nav-item.active {
+            color: var(--primary);
+        }
+        .bottom-nav .nav-item.active i {
+            transform: scale(1.08);
+        }
+        .bottom-nav .nav-item:hover {
+            color: var(--primary);
+            background: var(--surface2);
+        }
+
+        /* ===== FLOATING BUTTON ===== */
+        .floating-btn {
+            position: fixed;
+            bottom: 96px;
+            right: 28px;
+            z-index: 998;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.35);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .floating-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 44px rgba(37, 99, 235, 0.5);
+        }
+        .floating-btn .tooltip {
+            position: absolute;
+            right: 68px;
+            background: var(--surface);
+            color: var(--text);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+        .floating-btn:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* ===== FOOTER ===== */
+        .app-footer {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            margin-top: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        .app-footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 28px;
+        }
+        .app-footer h4 {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+        .app-footer p,
+        .app-footer a {
+            font-size: 14px;
+            color: var(--sub);
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+        .app-footer a:hover {
+            color: var(--primary);
+        }
+        .app-footer .version {
+            font-size: 13px;
+            color: var(--sub);
+            opacity: 0.5;
+            margin-top: 16px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar .container {
+                gap: 10px;
+            }
+            .nav-search {
+                order: 3;
+                flex: 1 1 100%;
+            }
+            .nav-logo {
+                font-size: 18px;
+            }
+            .hero {
+                padding: 36px 24px;
+                min-height: 240px;
+            }
+            .hero-content h1 {
+                font-size: 26px;
+            }
+            .hero-content p {
+                font-size: 14px;
+            }
+            .hero-illustration {
+                display: none;
+            }
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .section-header h2 {
+                font-size: 20px;
+            }
+            .bottom-nav .nav-item {
+                padding: 4px 12px;
+                font-size: 9px;
+            }
+            .bottom-nav .nav-item i {
+                font-size: 18px;
+            }
+            .floating-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+                bottom: 80px;
+                right: 16px;
+            }
+            .floating-btn .tooltip {
+                display: none;
+            }
+            .revision-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .quiz-section,
+            .ai-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 22px;
+            }
+            .hero-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+            .stat-card .number {
+                font-size: 28px;
+            }
+            .revision-grid {
+                grid-template-columns: 1fr;
+            }
+            .practical-card .card-top h3 {
+                font-size: 16px;
+            }
+            .practical-card {
+                padding: 18px 16px;
+            }
+            .app-footer {
+                padding: 24px 18px;
+            }
+            .app-footer .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            padding-top: 100%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            opacity: 0;
+            pointer-events: none;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+        .ripple:active::after {
+            animation: rippleAnim 0.5s ease;
+        }
+        @keyframes rippleAnim {
+            to {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+            }
+        }
+
+        .no-match {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--sub);
+            grid-column: 1 / -1;
+        }
+        .no-match .icon {
+            font-size: 52px;
+            margin-bottom: 14px;
+        }
+        .no-match h3 {
+            font-size: 20px;
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== GLASS NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                ITI <span>Exam</span>
+            </a>
+
+            <div class="nav-search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="प्रैक्टिकल खोजें... (OFC, SMPS, SMD...)" />
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-btn primary" id="startQuizBtnNav">
+                    <i class="fas fa-bolt"></i> टेस्ट
+                </button>
+                <button class="dark-toggle" id="darkToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="container">
+        <div class="hero fade-up">
+            <div class="hero-content">
+                <div class="badge"><i class="fas fa-calendar-alt"></i> 2026 · नया सिलेबस</div>
+                <h1>📚 ITI Exam <br><span>Theory 2026</span></h1>
+                <p>Prepare Smart · Practice Daily · Pass Easily</p>
+                <div class="hero-buttons">
+                    <button class="hero-btn primary" id="scrollToCards">
+                        <i class="fas fa-rocket"></i> Start Learning
+                    </button>
+                    <button class="hero-btn secondary" id="scrollToQuiz">
+                        <i class="fas fa-clipboard-list"></i> Mock Test
+                    </button>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <i class="fas fa-brain"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATISTICS ===== -->
+    <section class="container">
+        <div class="stats-section">
+            <div class="stat-card fade-up delay-1">
+                <div class="icon"><i class="fas fa-microchip"></i></div>
+                <div class="number" data-count="8">0</div>
+                <div class="label">Practicals</div>
+            </div>
+            <div class="stat-card fade-up delay-2">
+                <div class="icon"><i class="fas fa-comments"></i></div>
+                <div class="number" data-count="32">0</div>
+                <div class="label">VIVA Q&A</div>
+            </div>
+            <div class="stat-card fade-up delay-3">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <div class="number" data-count="1000">0</div>
+                <div class="label">Students</div>
+            </div>
+            <div class="stat-card fade-up delay-4">
+                <div class="icon"><i class="fas fa-trophy"></i></div>
+                <div class="number" data-count="98">0</div>
+                <div class="label">Pass Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRACTICAL CARDS ===== -->
+    <section class="container" id="subjectsSection">
+        <div class="section-header">
+            <h2><i class="fas fa-microchip"></i> प्रैक्टिकल्स (Practicals)</h2>
+            <span class="count" id="cardCount">8 प्रैक्टिकल</span>
+        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
+    </section>
+
+    <!-- ===== REVISION SECTION ===== -->
+    <section class="container">
+        <div class="revision-section" id="revisionSection">
+            <div class="section-header">
+                <h2><i class="fas fa-clock"></i> 1-मिनट रिवीजन</h2>
+                <span class="count">8 ट्रिक्स</span>
+            </div>
+            <div class="revision-grid" id="revisionGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== MOCK TEST SECTION ===== -->
+    <section class="container" id="mockTestSection">
+        <div class="quiz-section" id="mockSection">
+            <div class="section-header">
+                <h2><i class="fas fa-clipboard-check"></i> मॉक टेस्ट</h2>
+                <span class="count">अपनी तैयारी जांचें</span>
+            </div>
+            <div class="quiz-options">
+                <button class="quiz-btn active" data-questions="10">10 प्रश्न</button>
+                <button class="quiz-btn" data-questions="25">25 प्रश्न</button>
+                <button class="quiz-btn" data-questions="50">50 प्रश्न</button>
+                <button class="quiz-btn primary-btn" id="startQuizBtn">▶️ शुरू करें</button>
+            </div>
+
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-header">
+                    <span class="quiz-timer" id="quizTimer">⏱️ 00:00</span>
+                    <span class="quiz-progress" id="quizProgress">प्रश्न 1/10</span>
+                </div>
+                <div id="quizQuestion" class="quiz-question">प्रश्न...</div>
+                <div class="quiz-options-list" id="quizOptions"></div>
+                <button class="quiz-btn primary-btn" id="nextQuizBtn" style="margin-top:16px;">अगला →</button>
+                <div class="quiz-result" id="quizResult">
+                    <h4 style="color:var(--primary);font-size:20px;">🏆 परिणाम</h4>
+                    <p id="quizScore" style="font-size:22px;font-weight:700;margin:4px 0;">स्कोर: 0/0</p>
+                    <p id="quizRank" style="font-size:16px;">रैंक: --</p>
+                    <div id="wrongAnswers"></div>
+                    <button class="quiz-btn" id="resetQuizBtn" style="margin-top:14px;">🔄 दोबारा</button>
+                </div>
+                <div class="certificate-box" id="certificateBox">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div class="cert-title">🎉 प्रमाणपत्र (Certificate)</div>
+                    <p style="color:var(--sub);font-size:14px;">आपने मॉक टेस्ट पास किया!</p>
+                    <button class="cert-btn" id="downloadCertBtn"><i class="fas fa-download"></i> PDF डाउनलोड करें</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AI SECTION ===== -->
+    <section class="container">
+        <div class="ai-section" id="aiSection">
+            <div class="section-header">
+                <h2><i class="fas fa-robot"></i> AI डाउट सॉल्वर</h2>
+                <span class="count">तुरंत जवाब</span>
+            </div>
+            <div class="ai-chat">
+                <input type="text" id="aiInput" placeholder="कोई सवाल पूछें... (जैसे: SMPS क्या है?)" />
+                <button id="aiAskBtn"><i class="fas fa-paper-plane"></i> पूछें</button>
+            </div>
+            <div class="ai-response" id="aiResponse">
+                <strong style="color:var(--primary);">🤖 AI उत्तर:</strong>
+                <p id="aiAnswer" style="margin-top:6px;">यहाँ उत्तर आएगा...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="container">
+        <div class="app-footer">
+            <div class="footer-grid">
+                <div>
+                    <h4><i class="fas fa-graduation-cap" style="color:var(--primary);"></i> ITI Exam Theory</h4>
+                    <p>Made by Vivek</p>
+                    <p>Version 2.0</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#"><i class="fas fa-lock"></i> Privacy</a>
+                    <a href="#"><i class="fas fa-file-alt"></i> Terms</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                </div>
+                <div>
+                    <h4>Follow</h4>
+                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="version">© 2026 ITI Exam Theory · Made with ❤️ by Vivek</div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTTOM NAVIGATION ===== -->
+    <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-item active" data-tab="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="nav-item" data-tab="theory">
+            <i class="fas fa-book"></i>
+            <span>Theory</span>
+        </button>
+        <button class="nav-item" data-tab="mock">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Mock Test</span>
+        </button>
+        <button class="nav-item" data-tab="profile">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </button>
+    </nav>
+
+    <!-- ===== FLOATING BUTTON ===== -->
+    <button class="floating-btn" id="floatingBtn">
+        <i class="fas fa-arrow-up"></i>
+        <span class="tooltip">Top</span>
+    </button>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ============================================================
+            // DATA - 8 PRACTICALS (Miss Iti ke according)
+            // ============================================================
+            const practicals = [{
+                id: 1,
+                title: 'ऑप्टिकल फाइबर कम्युनिकेशन (OFC)',
+                icon: 'fa-wifi',
+                color: '#2563EB',
+                materials: 'Optical fiber trainer kit, OFC cables, OFC data manual, Patch cords',
+                steps: [
+                    'OFC trainer kit को चालू करें और Patch cords से फाइबर लिंक सेट करें।',
+                    'ट्रांसमीटर से सिग्नल भेजकर रिसीवर पर आउटपुट चेक करें।',
+                    'फाइबर को अलग-अलग कोण पर मोड़कर बेंडिंग लॉस मापें।',
+                    'पावर मीटर से एटेन्यूएशन (loss) को dB में रिकॉर्ड करें।'
+                ],
+                viva: [
+                    { q: 'OFC में किस सिद्धांत का उपयोग होता है?', a: 'कुल आंतरिक परावर्तन (Total Internal Reflection)' },
+                    { q: 'फाइबर के प्रकार बताएँ?', a: 'सिंगल-मोड और मल्टी-मोड' },
+                    { q: 'बेंडिंग लॉस क्यों होता है?', a: 'फाइबर के अत्यधिक झुकने से प्रकाश बाहर निकल जाता है।' },
+                    { q: 'एटेन्यूएशन का मुख्य कारण?', a: 'अवशोषण, स्कैटरिंग और बेंडिंग' }
+                ],
+                points: 'OFC = प्रकाश से डाटा, नॉइज कम, बैंडविड्थ अधिक। बेंडिंग लॉस से बचें।',
+                progress: 80
+            }, {
+                id: 2,
+                title: 'SMPS & PC Troubleshooting',
+                icon: 'fa-plug',
+                color: '#F59E0B',
+                materials: 'Computer SMPS, Desktop PC with cabinet, Digital multimeter',
+                steps: [
+                    'SMPS के 20/24 पिन कनेक्टर पर मल्टीमीटर से वोल्टेज मापें (3.3V, 5V, 12V, -12V)।',
+                    'PC को चालू करें और POST बीप कोड सुनें (एक बीप = सही, लंबी बीप = RAM फॉल्ट)',
+                    'मदरबोर्ड पर कैपेसिटर बल्ज/लीकेज चेक करें।',
+                    'PSU को बदलकर या कनेक्टर रिसीट करके ट्रबलशूट करें।'
+                ],
+                viva: [
+                    { q: 'SMPS का पूरा नाम?', a: 'Switched Mode Power Supply' },
+                    { q: 'POST क्या है?', a: 'Power-On Self Test' },
+                    { q: 'PSU में कौन-से वोल्टेज होते हैं?', a: '3.3V, 5V, 12V, -12V और PG (Power Good)' },
+                    { q: 'SMPS खराब होने पर क्या लक्षण?', a: 'PC ON नहीं होता, रीबूट, बीप कोड' }
+                ],
+                points: 'SMPS = स्विचिंग से पावर, हाई दक्षता। वोल्टेज मापना सबसे जरूरी।',
+                progress: 70
+            }, {
+                id: 3,
+                title: 'LCD/LED TV & Media Interface',
+                icon: 'fa-tv',
+                color: '#38BDF8',
+                materials: 'LCD/LED TV, Media source with HDMI, RCA, USB output, CRO/DSO',
+                steps: [
+                    'HDMI/RCA केबल से TV को मीडिया सोर्स से कनेक्ट करें।',
+                    'TV के इनपुट सोर्स को चयनित करें और डिस्प्ले चेक करें।',
+                    'CRO/DSO प्रोब को वीडियो या ऑडियो आउटपुट से जोड़कर वेवफॉर्म देखें।',
+                    'USB ड्राइव से मीडिया चलाकर प्लेबैक टेस्ट करें।'
+                ],
+                viva: [
+                    { q: 'LCD और LED में मुख्य अंतर?', a: 'LED में LED बैकलाइट, LCD में CCFL; LED पतला व कम बिजली' },
+                    { q: 'HDMI और RCA में क्या फर्क?', a: 'HDMI डिजिटल (AV), RCA एनालॉग (केवल वीडियो/ऑडियो)' },
+                    { q: 'CRO पर वीडियो सिग्नल कैसा दिखता है?', a: 'सिंक और ब्लैंकिंग पल्स के साथ कंपोजिट वीडियो' },
+                    { q: 'TV में बैकलाइट इन्वर्टर का काम?', a: 'LED/CCFL के लिए HV AC बनाना' }
+                ],
+                points: 'LED TV = बेहतर कंट्रास्ट, HDMI = बेस्ट क्वालिटी। CRO से सिग्नल चेक करें।',
+                progress: 65
+            }, {
+                id: 4,
+                title: 'ऑडियो सिस्टम और PA एम्पलीफायर',
+                icon: 'fa-music',
+                color: '#EC4899',
+                materials: 'Audio signal source, Microphone (Dynamic), Loudspeaker/Headphone, 3.5 mm cables & adapters, CRO',
+                steps: [
+                    'माइक्रोफोन को ऑडियो एम्पलीफायर से कनेक्ट करें।',
+                    'ऑडियो सोर्स (मोबाइल) से 3.5mm केबल द्वारा सिग्नल दें।',
+                    'स्पीकर/हेडफोन से आउटपुट सुनें और CRO पर वेवफॉर्म देखें।',
+                    'गेन (वॉल्यूम) बदलकर एम्पलीट्यूड परिवर्तन मापें।'
+                ],
+                viva: [
+                    { q: 'माइक्रोफोन कितने प्रकार का होता है?', a: 'डायनेमिक, कंडेंसर, रिबन' },
+                    { q: 'एम्पलीफायर की गेन किसे कहते हैं?', a: 'आउटपुट वोल्टेज / इनपुट वोल्टेज का अनुपात' },
+                    { q: 'THD का मतलब?', a: 'Total Harmonic Distortion — कम THD = साफ आवाज' },
+                    { q: 'स्पीकर का इम्पीडेंस (4Ω/8Ω) क्यों महत्वपूर्ण?', a: 'एम्पलीफायर मैचिंग के लिए' }
+                ],
+                points: 'PA सिस्टम = माइक + एम्पलीफायर + स्पीकर। CRO से वेवफॉर्म देखें।',
+                progress: 55
+            }, {
+                id: 5,
+                title: 'SMD Soldering & Desoldering',
+                icon: 'fa-microscope',
+                color: '#8B5CF6',
+                materials: 'SMD soldering workstation, Rosin cored solder, Solder flux pen, Magnifier with lamp, Cleaning brush, IPA solution',
+                steps: [
+                    'PCB पैड पर सोल्डर पेस्ट लगाएँ (स्टेंसिल या सुई से)।',
+                    'SMD कंपोनेंट (R, C, IC) को चिमटी से प्लेस करें।',
+                    'हॉट एयर (300°C) से पेस्ट पिघलाकर सोल्डर करें।',
+                    'डी-सोल्डरिंग के लिए हॉट एयर + सक्शन पेन का उपयोग करें।',
+                    'सोल्डरिंग के बाद मैग्नीफायर से जॉइंट चेक करें और IPA से क्लीन करें।'
+                ],
+                viva: [
+                    { q: 'SMD का पूरा नाम?', a: 'Surface Mount Device' },
+                    { q: 'सोल्डरिंग में किस मिश्र धातु का उपयोग?', a: 'Sn-Pb (लेडेड) या SAC (लेड-फ्री)' },
+                    { q: 'हॉट एयर का तापमान कितना रखें?', a: '300-350°C, पिघलने के लिए' },
+                    { q: 'IPA सॉल्यूशन क्यों उपयोग करें?', a: 'फ्लक्स और गंदगी हटाने के लिए' }
+                ],
+                points: 'SMD = छोटा, सटीकता चाहिए। हॉट एयर का तापमान और समय महत्वपूर्ण।',
+                progress: 60
+            }, {
+                id: 6,
+                title: 'DSO/CRO Waveform Analysis',
+                icon: 'fa-chart-line',
+                color: '#EF4444',
+                materials: 'CRO (0-20) MHz / DSO, Audio signal source, Patch cords',
+                steps: [
+                    'CRO/DSO को चालू करें और प्रोब को चैनल 1 से जोड़ें।',
+                    'कैलिब्रेशन (1kHz, 1V) सेटिंग चेक करें।',
+                    'ऑडियो सोर्स से 1kHz साइन वेव दें और वेवफॉर्म देखें।',
+                    'वोल्ट/डिव और टाइम/डिव सेट करके आवृत्ति (f) और आयाम (Vp-p) मापें।'
+                ],
+                viva: [
+                    { q: 'DSO और CRO में अंतर?', a: 'DSO डिजिटल, मेमोरी, माप आसान; CRO एनालॉग' },
+                    { q: 'प्रोब का attenuator क्या करता है?', a: 'सिग्नल को 10x या 1x कम करना' },
+                    { q: 'ट्रिगर (Trigger) क्यों जरूरी?', a: 'वेवफॉर्म को स्टेबल करने के लिए' },
+                    { q: 'फ्रीक्वेंसी कैसे मापेंगे?', a: 'समय अवधि (T) मापकर f=1/T' }
+                ],
+                points: 'DSO = डिजिटल स्टोरेज, सटीक माप। वेवफॉर्म से सिग्नल की जानकारी।',
+                progress: 75
+            }, {
+                id: 7,
+                title: 'Crimping & Interconnection',
+                icon: 'fa-tools',
+                color: '#14B8A6',
+                materials: 'Crimping tools, 3.5 mm stereo EP to EP cable, 6 mm to 3.5 mm phono adapter',
+                steps: [
+                    'स्टीरियो केबल को स्ट्रिप करके तारों (L/R/GND) को छीलें।',
+                    '3.5mm जैक में तारों को सही पिन पर सोल्डर/क्रिम्प करें।',
+                    'Phono (RCA) to Stereo एडॉप्टर बनाएँ।',
+                    'केबल टेस्टर से कंटीन्यूटी चेक करें और ऑडियो/वीडियो पैच करें।'
+                ],
+                viva: [
+                    { q: 'RJ45 में कितने पिन होते हैं?', a: '8 पिन (RJ11 में 4 या 6)' },
+                    { q: 'क्रिम्पिंग टूल का क्या काम?', a: 'कनेक्टर को केबल से मजबूती से जोड़ना' },
+                    { q: 'Phono और 3.5mm में क्या अंतर?', a: 'Phono RCA (6mm), 3.5mm stereo (मिनी जैक)' },
+                    { q: 'कंटीन्यूटी टेस्ट क्यों करते हैं?', a: 'सही कनेक्शन और शॉर्ट चेक करने के लिए' }
+                ],
+                points: 'क्रिम्पिंग = सही पिन आउट + मजबूत जोड़। मल्टीमीटर से कंटीन्यूटी जरूर चेक करें।',
+                progress: 45
+            }, {
+                id: 8,
+                title: 'Component Testing & Circuit Assembly',
+                icon: 'fa-microchip',
+                color: '#10B981',
+                materials: 'Trainees tool kit, Digital multimeter with probes, RC solder, Paper clip',
+                steps: [
+                    'मल्टीमीटर को रेजिस्टेंस मोड में रखकर अलग-अलग R मापें।',
+                    'कैपेसिटर को कैपेसिटेंस मोड से चेक करें।',
+                    'पेपर क्लिप या जम्पर का उपयोग करके सर्किट को ब्रेडबोर्ड पर असेंबल करें।',
+                    'टूल किट (कटर, प्लायर) से PCB पर कंपोनेंट लगाकर सोल्डर करें।'
+                ],
+                viva: [
+                    { q: 'रेजिस्टेंस मापने के लिए मल्टीमीटर का कौन-सा मोड?', a: 'Ω मोड (200Ω से 2000kΩ)' },
+                    { q: 'कैपेसिटर कैसे टेस्ट करें?', a: 'कैपेसिटेंस मोड या ESR मीटर से' },
+                    { q: 'ट्रेनी टूल किट में क्या-क्या होता है?', a: 'कटर, प्लायर, स्क्रू ड्राइवर, सोल्डरिंग आयरन' },
+                    { q: 'सोल्डरिंग में रोजिन (flux) का क्या उपयोग?', a: 'ऑक्साइड हटाकर अच्छा जोड़ बनाना' }
+                ],
+                points: 'मल्टीमीटर से R और C चेक करें। सोल्डरिंग से पहले साफ-सफाई जरूरी।',
+                progress: 50
+            }];
+
+            // ============================================================
+            // MOCK TEST QUESTIONS (50)
+            // ============================================================
+            const allQuestions = [
+                { q: 'OFC में किस सिद्धांत का उपयोग होता है?', options: ['परावर्तन', 'अपवर्तन', 'कुल आंतरिक परावर्तन',
+                        'विभाजन'
+                    ], correct: 2 },
+                { q: 'SMPS का पूरा नाम क्या है?', options: ['Switched Mode Power Supply', 'Single Mode Power Supply',
+                        'System Mode Power Supply', 'Simple Power Supply'
+                    ], correct: 0 },
+                { q: 'LED TV में किसका उपयोग होता है?', options: ['CCFL', 'LED बैकलाइट', 'प्लाज्मा', 'LCD पैनल'],
+                    correct: 1 },
+                { q: 'SMD का पूरा नाम क्या है?', options: ['Surface Mount Device', 'Simple Mount Device',
+                        'System Mount Device', 'Standard Mount Device'
+                    ], correct: 0 },
+                { q: 'DSO और CRO में मुख्य अंतर क्या है?', options: ['DSO डिजिटल है', 'CRO डिजिटल है', 'दोनों समान हैं',
+                        'DSO एनालॉग है'
+                    ], correct: 0 },
+                { q: 'RJ45 कनेक्टर में कितने पिन होते हैं?', options: ['4', '6', '8', '10'], correct: 2 },
+                { q: 'ट्रांजिस्टर की पहचान कैसे करें?', options: ['रंग से', 'डेटाशीट से', 'आकार से', 'सबसे सही उत्तर है डेटाशीट से'],
+                    correct: 1 },
+                { q: 'THD का मतलब क्या है?', options: ['Total Harmonic Distortion', 'Total High Definition',
+                        'Tuned High Distortion', 'None'
+                    ], correct: 0 },
+                { q: 'OFC में किस तरंग का उपयोग होता है?', options: ['रेडियो', 'माइक्रोवेव', 'प्रकाश', 'ध्वनि'],
+                    correct: 2 },
+                { q: 'SMPS में कौन-सा वोल्टेज नहीं होता?', options: ['3.3V', '5V', '12V', '24V'], correct: 3 },
+                { q: 'HDMI किस प्रकार का सिग्नल है?', options: ['एनालॉग', 'डिजिटल', 'FM', 'AM'], correct: 1 },
+                { q: 'सोल्डरिंग में फ्लक्स का क्या उपयोग?', options: ['ऑक्साइड हटाना', 'गर्मी बढ़ाना', 'सोल्डर पिघलाना', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'CRO में ट्रिगर का क्या काम?', options: ['वेवफॉर्म स्टेबल करना', 'वोल्टेज मापना', 'आवृत्ति मापना',
+                        'कोई नहीं'
+                    ], correct: 0 },
+                { q: 'क्रिम्पिंग टूल का क्या काम?', options: ['सोल्डर करना', 'कनेक्टर जोड़ना', 'केबल काटना', 'टेस्ट करना'],
+                    correct: 1 },
+                { q: 'बेंडिंग लॉस किसमें होता है?', options: ['तांबे की तार', 'फाइबर ऑप्टिक', 'कोएक्सियल', 'ट्विस्टेड पेयर'],
+                    correct: 1 },
+                { q: 'POST का क्या अर्थ है?', options: ['Power-On Self Test', 'Power Off System Test',
+                        'Primary Operating System Test', 'None'
+                    ], correct: 0 },
+                { q: 'LCD में किसका उपयोग होता है?', options: ['LED', 'CCFL', 'प्लाज्मा', 'OLED'], correct: 1 },
+                { q: 'हॉट एयर का तापमान कितना होता है?', options: ['200°C', '300-350°C', '400°C', '500°C'],
+                    correct: 1 },
+                { q: 'DSO में क्या स्टोर होता है?', options: ['सिग्नल', 'वोल्टेज', 'वेवफॉर्म', 'सब कुछ'], correct: 2 },
+                { q: 'RCA कनेक्टर किसके लिए उपयोग होता है?', options: ['ऑडियो', 'वीडियो', 'ऑडियो+वीडियो', 'पावर'],
+                    correct: 2 },
+                { q: 'ट्रांजिस्टर कितने प्रकार के होते हैं?', options: ['NPN और PNP', 'PNP और NPN', 'दोनों', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'एटेन्यूएशन किसे कहते हैं?', options: ['सिग्नल बढ़ना', 'सिग्नल कम होना', 'सिग्नल रुकना', 'कोई नहीं'],
+                    correct: 1 },
+                { q: 'SMPS की दक्षता कितनी होती है?', options: ['60%', '70%', '80-85%', '90%'], correct: 2 },
+                { q: 'LED TV कितना बिजली खपत करता है?', options: ['कम', 'अधिक', 'बराबर', 'कोई नहीं'], correct: 0 },
+                { q: 'SMD कंपोनेंट कैसे लगाए जाते हैं?', options: ['सोल्डरिंग द्वारा', 'गोंद द्वारा', 'क्लिप द्वारा', 'स्क्रू द्वारा'],
+                    correct: 0 },
+                { q: 'CRO का पूरा नाम?', options: ['Cathode Ray Oscilloscope', 'Cathode Ray Oscillator',
+                        'Control Ray Oscilloscope', 'None'
+                    ], correct: 0 },
+                { q: 'RJ11 में कितने पिन होते हैं?', options: ['4', '6', '8', '10'], correct: 1 },
+                { q: 'मल्टीमीटर से क्या माप सकते हैं?', options: ['वोल्टेज', 'करंट', 'रेजिस्टेंस', 'सब कुछ'], correct: 3 },
+                { q: 'ऑडियो एम्पलीफायर का क्या काम?', options: ['सिग्नल बढ़ाना', 'सिग्नल कम करना', 'सिग्नल रोकना', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'प्रोब में attenuator का क्या काम?', options: ['सिग्नल कम करना', 'सिग्नल बढ़ाना', 'सिग्नल फिल्टर करना',
+                        'कोई नहीं'
+                    ], correct: 0 },
+                { q: 'फाइबर ऑप्टिक में किसका उपयोग होता है?', options: ['तांबा', 'कांच/प्लास्टिक', 'लोहा', 'एल्यूमीनियम'],
+                    correct: 1 },
+                { q: 'PC में SMPS खराब होने पर क्या होता है?', options: ['PC ON नहीं होता', 'PC धीमा होता है', 'PC गर्म होता है',
+                        'कोई नहीं'
+                    ], correct: 0 },
+                { q: 'HDMI केबल कितने चैनल ऑडियो सपोर्ट करता है?', options: ['2', '4', '8', 'असीमित'], correct: 2 },
+                { q: 'IPA सॉल्यूशन का क्या उपयोग?', options: ['साफ करना', 'सोल्डर करना', 'गर्म करना', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'DSO की मेमोरी में क्या स्टोर होता है?', options: ['वेवफॉर्म', 'वोल्टेज', 'सिग्नल', 'सब कुछ'],
+                    correct: 3 },
+                { q: 'फाइबर ऑप्टिक में सिग्नल कैसे जाता है?', options: ['बिजली से', 'प्रकाश से', 'रेडियो से', 'ध्वनि से'],
+                    correct: 1 },
+                { q: 'SMPS में कितने वोल्टेज आउटपुट होते हैं?', options: ['1', '2', '3', '4'], correct: 3 },
+                { q: 'LCD और LED में कौन पतला होता है?', options: ['LCD', 'LED', 'दोनों समान', 'कोई नहीं'], correct: 1 },
+                { q: 'सोल्डरिंग में किस धातु का उपयोग?', options: ['सोना', 'चांदी', 'टिन-सीसा', 'तांबा'], correct: 2 },
+                { q: 'CRO में वेवफॉर्म कैसे देखते हैं?', options: ['स्क्रीन पर', 'मीटर पर', 'डिजिटल डिस्प्ले पर', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'क्रिम्पिंग में क्या इस्तेमाल होता है?', options: ['टूल', 'सोल्डर', 'गोंद', 'टेप'], correct: 0 },
+                { q: 'डायोड को कैसे टेस्ट करें?', options: ['मल्टीमीटर से', 'LCR मीटर से', 'दोनों', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'OFC में बैंडविड्थ कितनी होती है?', options: ['कम', 'अधिक', 'बराबर', 'कोई नहीं'], correct: 1 },
+                { q: 'PC में POST बीप क्या दर्शाता है?', options: ['सही', 'फॉल्ट', 'दोनों', 'कोई नहीं'], correct: 0 },
+                { q: 'HDMI किस कंपनी ने बनाया?', options: ['Sony', 'Philips', 'Hitachi', 'सभी'], correct: 3 },
+                { q: 'SMD कंपोनेंट कैसे पहचानें?', options: ['आकार से', 'कोड से', 'रंग से', 'सबसे सही उत्तर है कोड से'],
+                    correct: 1 },
+                { q: 'DSO में कितने चैनल होते हैं?', options: ['1', '2', '4', 'सभी'], correct: 3 },
+                { q: 'फाइबर ऑप्टिक में कितने प्रकार होते हैं?', options: ['1', '2', '3', '4'], correct: 1 },
+                { q: 'SMPS में कौन-सा वोल्टेज सबसे कम होता है?', options: ['3.3V', '5V', '12V', '-12V'], correct: 0 },
+                { q: 'LED TV का मुख्य लाभ क्या है?', options: ['कम बिजली', 'पतला', 'उच्च कंट्रास्ट', 'सभी'], correct: 3 }
+            ];
+
+            // ============================================================
+            // DOM REFS
+            // ============================================================
+            const cardsGrid = document.getElementById('cardsGrid');
+            const revisionGrid = document.getElementById('revisionGrid');
+            const searchInput = document.getElementById('searchInput');
+            const darkToggle = document.getElementById('darkToggle');
+            const floatingBtn = document.getElementById('floatingBtn');
+            const cardCount = document.getElementById('cardCount');
+
+            // Quiz
+            const quizContainer = document.getElementById('quizContainer');
+            const startQuizBtn = document.getElementById('startQuizBtn');
+            const startQuizBtnNav = document.getElementById('startQuizBtnNav');
+            const nextQuizBtn = document.getElementById('nextQuizBtn');
+            const resetQuizBtn = document.getElementById('resetQuizBtn');
+            const quizQuestion = document.getElementById('quizQuestion');
+            const quizOptions = document.getElementById('quizOptions');
+            const quizTimer = document.getElementById('quizTimer');
+            const quizProgress = document.getElementById('quizProgress');
+            const quizResult = document.getElementById('quizResult');
+            const quizScore = document.getElementById('quizScore');
+            const quizRank = document.getElementById('quizRank');
+            const wrongAnswers = document.getElementById('wrongAnswers');
+            const certificateBox = document.getElementById('certificateBox');
+            const downloadCertBtn = document.getElementById('downloadCertBtn');
+
+            // AI
+            const aiInput = document.getElementById('aiInput');
+            const aiAskBtn = document.getElementById('aiAskBtn');
+            const aiResponse = document.getElementById('aiResponse');
+            const aiAnswer = document.getElementById('aiAnswer');
+
+            // ============================================================
+            // STATE
+            // ============================================================
+            let quizQuestions = [];
+            let currentIndex = 0;
+            let quizScoreCount = 0;
+            let quizTotal = 0;
+            let quizWrong = [];
+            let timerInterval = null;
+            let seconds = 0;
+            let quizStarted = false;
+            let selectedCount = 10;
+
+            // ============================================================
+            // RENDER PRACTICAL CARDS
+            // ============================================================
+            function renderCards(filter = '') {
+                const q = filter.trim().toLowerCase();
+                let filtered = practicals;
+                if (q) {
+                    filtered = practicals.filter(p =>
+                        p.title.toLowerCase().includes(q) ||
+                        p.materials.toLowerCase().includes(q) ||
+                        p.steps.some(s => s.toLowerCase().includes(q)) ||
+                        p.viva.some(v => v.q.toLowerCase().includes(q) || v.a.toLowerCase().includes(q)) ||
+                        p.points.toLowerCase().includes(q)
+                    );
+                }
+                cardsGrid.innerHTML = '';
+                if (filtered.length === 0) {
+                    cardsGrid.innerHTML = `
+                        <div class="no-match" style="grid-column:1/-1;">
+                            <div class="icon">🔍</div>
+                            <h3>कोई प्रैक्टिकल नहीं मिला</h3>
+                            <p style="color:var(--sub);">"${filter}" से संबंधित कोई प्रैक्टिकल नहीं है</p>
+                        </div>
+                    `;
+                } else {
+                    filtered.forEach((p, idx) => {
+                        const card = document.createElement('div');
+                        card.className = `practical-card fade-up delay-${(idx % 4) + 1}`;
+                        card.style.borderTop = `5px solid ${p.color}`;
+
+                        const vivaHtml = p.viva.map(v =>
+                            `<div class="viva-item"><strong>प्रश्न:</strong> ${v.q} <br> <strong>उत्तर:</strong> ${v.a}</div>`
+                        ).join('');
+
+                        card.innerHTML = `
+                            <div class="card-top">
+                                <h3><i class="fas ${p.icon}" style="color:${p.color};margin-right:10px;"></i> ${p.title}</h3>
+                                <span class="badge">प्रैक्टिकल ${p.id}</span>
+                            </div>
+                            <div class="mat-list">
+                                <strong>🛠️ सामग्री :</strong> ${p.materials}
+                            </div>
+                            <ol class="step-list">
+                                ${p.steps.map(s => `<li>${s}</li>`).join('')}
+                            </ol>
+                            <div class="viva-box">
+                                <div class="viva-title">🗣️ VIVA प्रश्न-उत्तर</div>
+                                ${vivaHtml}
+                            </div>
+                            <div class="exam-points">
+                                <strong>📌 परीक्षा टिप्स :</strong> ${p.points}
+                            </div>
+                            <div class="progress-wrap">
+                                <div class="label-row">
+                                    <span>प्रगति</span>
+                                    <span>${p.progress}%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="fill" style="width:${p.progress}%;"></div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="q-count"><i class="fas fa-question-circle"></i> ${p.viva.length} VIVA</span>
+                                <button class="open-btn ripple"><i class="fas fa-arrow-right"></i> Open</button>
+                            </div>
+                        `;
+                        cardsGrid.appendChild(card);
+                    });
+                }
+                cardCount.textContent = `${filtered.length} प्रैक्टिकल`;
+            }
+
+            // ============================================================
+            // RENDER REVISION
+            // ============================================================
+            function renderRevision() {
+                revisionGrid.innerHTML = '';
+                practicals.forEach(p => {
+                    const item = document.createElement('div');
+                    item.className = 'revision-item';
+                    const short = p.points.split('।')[0] || p.points;
+                    item.innerHTML = `
+                        <strong>${p.title.substring(0, 30)}</strong>
+                        ${short}
+                    `;
+                    revisionGrid.appendChild(item);
+                });
+            }
+
+            // ============================================================
+            // STATISTICS COUNTER
+            // ============================================================
+            function animateCounters() {
+                document.querySelectorAll('.stat-card .number').forEach(el => {
+                    const target = parseInt(el.dataset.count);
+                    let current = 0;
+                    const increment = Math.ceil(target / 40);
+                    const interval = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(interval);
+                        }
+                        el.textContent = current + (target === 98 ? '%' : '+');
+                    }, 30);
+                });
+            }
+
+            // ============================================================
+            // DARK MODE
+            // ============================================================
+            function toggleDark() {
+                document.body.classList.toggle('dark');
+                const isDark = document.body.classList.contains('dark');
+                darkToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('iti-dark', isDark ? 'dark' : 'light');
+            }
+
+            function initDark() {
+                if (localStorage.getItem('iti-dark') === 'dark') {
+                    document.body.classList.add('dark');
+                    darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                }
+            }
+
+            // ============================================================
+            // BOTTOM NAV
+            // ============================================================
+            document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.bottom-nav .nav-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    const tab = this.dataset.tab;
+                    if (tab === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
+                    else if (tab === 'theory') document.getElementById('subjectsSection').scrollIntoView({ behavior: 'smooth' });
+                    else if (tab === 'mock') document.getElementById('mockTestSection').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // ============================================================
+            // FLOATING BUTTON
+            // ============================================================
+            floatingBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 400) {
+                    floatingBtn.style.opacity = '1';
+                    floatingBtn.style.transform = 'scale(1)';
+                } else {
+                    floatingBtn.style.opacity = '0.5';
+                    floatingBtn.style.transform = 'scale(0.9)';
+                }
+            });
+
+            // ============================================================
+            // MOCK TEST
+            // ============================================================
+            function shuffleArray(arr) {
+                for (let i = arr.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+                }
+                return arr;
+            }
+
+            function startQuiz() {
+                const shuffled = shuffleArray([...allQuestions]);
+                quizQuestions = shuffled.slice(0, Math.min(selectedCount, shuffled.length));
+                if (quizQuestions.length === 0) return;
+                currentIndex = 0;
+                quizScoreCount = 0;
+                quizWrong = [];
+                quizTotal = quizQuestions.length;
+                quizStarted = true;
+                seconds = 0;
+                certificateBox.classList.remove('active');
+
+                quizContainer.classList.add('active');
+                quizResult.classList.remove('active');
+                startQuizBtn.textContent = '⏳ टेस्ट चल रहा...';
+                startQuizBtn.disabled = true;
+                startQuizBtnNav.textContent = '⏳ टेस्ट...';
+                startQuizBtnNav.disabled = true;
+
+                if (timerInterval) clearInterval(timerInterval);
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+                    const secs = String(seconds % 60).padStart(2, '0');
+                    quizTimer.textContent = `⏱️ ${mins}:${secs}`;
+                }, 1000);
+
+                showQuestion();
+            }
+
+            function showQuestion() {
+                if (currentIndex >= quizQuestions.length) { endQuiz(); return; }
+                const q = quizQuestions[currentIndex];
+                quizQuestion.textContent = `${currentIndex+1}. ${q.q}`;
+                quizProgress.textContent = `प्रश्न ${currentIndex+1}/${quizQuestions.length}`;
+
+                let html = '';
+                q.options.forEach((opt, idx) => {
+                    const letter = String.fromCharCode(65 + idx);
+                    html += `
+                        <label>
+                            <input type="radio" name="quizOpt" value="${idx}" />
+                            ${letter}. ${opt}
+                        </label>
+                    `;
+                });
+                quizOptions.innerHTML = html;
+
+                quizOptions.querySelectorAll('input[type="radio"]').forEach(input => {
+                    input.addEventListener('change', function() {
+                        const selected = parseInt(this.value);
+                        const correct = quizQuestions[currentIndex].correct;
+                        const labels = quizOptions.querySelectorAll('label');
+                        labels.forEach((label, idx) => {
+                            if (idx === correct) {
+                                label.style.borderColor = '#22a65a';
+                                label.style.background = '#e6f7ec';
+                            } else if (idx === selected && selected !== correct) {
+                                label.style.borderColor = '#ea4335';
+                                label.style.background = '#fde8e8';
+                            }
+                        });
+                        quizOptions.querySelectorAll('input').forEach(inp => inp.disabled = true);
+
+                        if (selected === correct) quizScoreCount++;
+                        else {
+                            quizWrong.push({
+                                question: quizQuestions[currentIndex].q,
+                                yourAnswer: quizQuestions[currentIndex].options[selected],
+                                correctAnswer: quizQuestions[currentIndex].options[correct]
+                            });
+                        }
+
+                        setTimeout(() => {
+                            if (currentIndex < quizQuestions.length - 1) { currentIndex++;
+                                showQuestion(); } else endQuiz();
+                        }, 700);
+                    });
+                });
+            }
+
+            function endQuiz() {
+                if (timerInterval) clearInterval(timerInterval);
+                quizStarted = false;
+                startQuizBtn.textContent = '▶️ शुरू करें';
+                startQuizBtn.disabled = false;
+                startQuizBtnNav.textContent = '📝 टेस्ट';
+                startQuizBtnNav.disabled = false;
+
+                quizResult.classList.add('active');
+                const pct = Math.round((quizScoreCount / quizTotal) * 100);
+                quizScore.textContent = `स्कोर: ${quizScoreCount}/${quizTotal} (${pct}%)`;
+
+                let rank = '--';
+                if (pct >= 90) rank = '🥇 A+ (उत्कृष्ट)';
+                else if (pct >= 75) rank = '🥈 A (बहुत अच्छा)';
+                else if (pct >= 60) rank = '🥉 B (अच्छा)';
+                else if (pct >= 40) rank = '📘 C (सुधार की जरूरत)';
+                else rank = '📕 D (दोबारा पढ़ें)';
+                quizRank.textContent = `रैंक: ${rank}`;
+
+                let wrongHtml = '';
+                if (quizWrong.length > 0) {
+                    wrongHtml = '<h4 style="margin-top:12px;">❌ गलत उत्तर:</h4>';
+                    quizWrong.forEach(w => {
+                        wrongHtml += `
+                            <div style="padding:10px;background:var(--bg);margin:6px 0;border-radius:10px;border-left:4px solid #ea4335;">
+                                <strong>${w.question}</strong><br>
+                                आपका: ${w.yourAnswer} (गलत) → सही: ${w.correctAnswer}
+                            </div>
+                        `;
+                    });
+                } else if (quizTotal > 0) {
+                    wrongHtml = '<p style="color:#22a65a;font-weight:600;font-size:16px;">🎉 सभी उत्तर सही! बहुत बढ़िया!</p>';
+                }
+                wrongAnswers.innerHTML = wrongHtml;
+
+                if (pct >= 60) certificateBox.classList.add('active');
+            }
+
+            // ============================================================
+            // CERTIFICATE DOWNLOAD
+            // ============================================================
+            downloadCertBtn.addEventListener('click', function() {
+                const win = window.open('', '_blank');
+                win.document.write(`
+                    <html><head><title>Certificate</title>
+                    <style>
+                        body { font-family: 'Inter', Arial, sans-serif; padding: 40px; text-align: center; background:#f8fafc; }
+                        .cert { border: 4px solid #2563EB; padding: 40px; border-radius: 20px; max-width: 500px; margin: auto; background:white; box-shadow:0 8px 32px rgba(0,0,0,0.08); }
+                        .icon { font-size: 60px; }
+                        h1 { color: #2563EB; font-size:28px; }
+                        .score { font-size:22px; font-weight:700; margin:8px 0; }
+                        .rank { color:#666; font-size:16px; }
+                        .date { color:#999; font-size:14px; margin-top:16px; }
+                    </style>
+                    </head>
+                    <body>
+                        <div class="cert">
+                            <div class="icon">🏆</div>
+                            <h1>ITI Exam Theory</h1>
+                            <h2 style="color:#0F172A;">प्रमाणपत्र</h2>
+                            <p style="color:#475569;">आपने मॉक टेस्ट पास किया!</p>
+                            <div class="score">${quizScore.textContent}</div>
+                            <div class="rank">${quizRank.textContent}</div>
+                            <div class="date">${new Date().toLocaleDateString('hi-IN', { day:'numeric', month:'long', year:'numeric' })}</div>
+                        </div>
+                    </body></html>
+                `);
+                win.document.close();
+                setTimeout(() => win.print(), 500);
+            });
+
+            // ============================================================
+            // AI DOUBT SOLVER
+            // ============================================================
+            function askAI() {
+                const query = aiInput.value.trim().toLowerCase();
+                if (!query) { alert('कृपया कोई सवाल पूछें!'); return; }
+                aiResponse.classList.add('active');
+
+                let answer = 'मुझे माफ करें, मुझे इस सवाल का जवाब नहीं पता। कृपया दूसरा सवाल पूछें।';
+
+                const keywords = {
+                    'smps': 'SMPS (Switched Mode Power Supply) एक पावर सप्लाई है जो स्विचिंग तकनीक से DC वोल्टेज बनाता है। यह 3.3V, 5V, 12V, -12V आउटपुट देता है और 80-85% दक्षता रखता है।',
+                    'ofc': 'OFC (Optical Fiber Communication) में प्रकाश का उपयोग डाटा ट्रांसमिशन के लिए होता है। इसमें Total Internal Reflection का सिद्धांत काम करता है।',
+                    'lcd': 'LCD (Liquid Crystal Display) में CCFL बैकलाइट का उपयोग होता है। यह LED से पुरानी तकनीक है।',
+                    'led': 'LED TV में LED बैकलाइट का उपयोग होता है। यह पतला, कम बिजली लेता है और उच्च कंट्रास्ट देता है।',
+                    'smd': 'SMD (Surface Mount Device) छोटे कंपोनेंट होते हैं जो PCB की सतह पर सोल्डर किए जाते हैं। इन्हें हॉट एयर से सोल्डर किया जाता है।',
+                    'dso': 'DSO (Digital Storage Oscilloscope) डिजिटल ऑसिलोस्कोप है जो वेवफॉर्म को स्टोर और माप सकता है।',
+                    'cro': 'CRO (Cathode Ray Oscilloscope) एनालॉग ऑसिलोस्कोप है जो इलेक्ट्रॉन बीम से वेवफॉर्म दिखाता है।',
+                    'rj45': 'RJ45 में 8 पिन होते हैं। इसका उपयोग नेटवर्किंग (Ethernet) में होता है।',
+                    'rj11': 'RJ11 में 4 या 6 पिन होते हैं। इसका उपयोग टेलीफोन में होता है।',
+                    'crimping': 'क्रिम्पिंग टूल का उपयोग कनेक्टर को केबल से मजबूती से जोड़ने के लिए होता है।',
+                    'multimeter': 'मल्टीमीटर से वोल्टेज, करंट, रेजिस्टेंस, डायोड, ट्रांजिस्टर आदि माप सकते हैं।',
+                    'soldering': 'सोल्डरिंग में टिन-सीसा मिश्र धातु का उपयोग होता है। फ्लक्स (रोजिन) ऑक्साइड हटाने के लिए लगाया जाता है।'
+                };
+
+                for (const [key, value] of Object.entries(keywords)) {
+                    if (query.includes(key)) { answer = value; break; }
+                }
+
+                if (answer === 'मुझे माफ करें, मुझे इस सवाल का जवाब नहीं पता। कृपया दूसरा सवाल पूछें।') {
+                    if (query.includes('क्या है') || query.includes('होता है')) {
+                        answer = 'यह ITI इलेक्ट्रॉनिक्स मैकेनिक का प्रैक्टिकल सवाल है। ऊपर दिए गए प्रैक्टिकल्स में इस टॉपिक को खोजें या VIVA प्रश्नों में उत्तर देखें।';
+                    }
+                }
+                aiAnswer.textContent = answer;
+            }
+
+            // ============================================================
+            // EVENT LISTENERS
+            // ============================================================
+            searchInput.addEventListener('input', function() { renderCards(this.value); });
+
+            darkToggle.addEventListener('click', toggleDark);
+
+            document.querySelectorAll('.quiz-btn[data-questions]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.quiz-btn[data-questions]').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedCount = parseInt(this.dataset.questions);
+                });
+            });
+
+            startQuizBtn.addEventListener('click', function() { if (!quizStarted) startQuiz(); });
+            startQuizBtnNav.addEventListener('click', function() {
+                document.getElementById('mockTestSection').scrollIntoView({ behavior: 'smooth' });
+                if (!quizStarted) startQuiz();
+            });
+
+            resetQuizBtn.addEventListener('click', function() {
+                if (timerInterval) clearInterval(timerInterval);
+                quizStarted = false;
+                quizContainer.classList.remove('active');
+                startQuizBtn.textContent = '▶️ शुरू करें';
+                startQuizBtn.disabled = false;
+                startQuizBtnNav.textContent = '📝 टेस्ट';
+                startQuizBtnNav.disabled = false;
+                quizResult.classList.remove('active');
+                quizTimer.textContent = '⏱️ 00:00';
+                certificateBox.classList.remove('active');
+            });
+
+            document.getElementById('scrollToCards').addEventListener('click', function() {
+                document.getElementById('subjectsSection').scrollIntoView({ behavior: 'smooth' });
+            });
+            document.getElementById('scrollToQuiz').addEventListener('click', function() {
+                document.getElementById('mockTestSection').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            aiAskBtn.addEventListener('click', askAI);
+            aiInput.addEventListener('keyup', function(e) { if (e.key === 'Enter') askAI(); });
+
+            // Open button on cards
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest('.open-btn');
+                if (btn) {
+                    const card = btn.closest('.practical-card');
+                    const title = card.querySelector('h3')?.textContent || '';
+                    searchInput.value = title;
+                    renderCards(title);
+                    document.getElementById('subjectsSection').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            // ============================================================
+            // INIT
+            // ============================================================
+            renderCards();
+            renderRevision();
+            initDark();
+            animateCounters();
+
+            console.log('✅ ITI Exam Theory 2026 · Pro Loaded!');
+            console.log(`📚 ${practicals.length} Practicals, ${allQuestions.length} Questions`);
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+
+        })();
+    </script>
+</body>
+</html>
