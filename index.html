@@ -1,1786 +1,2073 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Vivek Wedding Studio – Luxury Photography & Cinematography</title>
-  <meta name="description" content="Vivek Wedding Studio – Capturing Emotions Forever. Premium wedding photography in Begusarai, Bihar by Vivek Roy." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+    <title>ITI Exam Theory 2026 · Complete</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* ============================================================
+           ROOT VARIABLES - Premium Dark Blue Theme
+           ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    /* ===== RESET & BASE ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-      -webkit-tap-highlight-color: transparent;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      color: #ffffff;
-      line-height: 1.7;
-      transition: background 0.4s ease, color 0.4s ease;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    ul {
-      list-style: none;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-      -webkit-user-select: none;
-      user-select: none;
-      -webkit-touch-callout: none;
-    }
+        :root {
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface2: #F1F5F9;
+            --text: #0F172A;
+            --sub: #475569;
+            --border: #E2E8F0;
+            --primary: #2563EB;
+            --primary-light: #3B82F6;
+            --sky: #38BDF8;
+            --dark: #0F172A;
+            --shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+            --shadow-hover: 0 12px 40px rgba(37, 99, 235, 0.15);
+            --radius: 18px;
+            --radius-full: 50px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --glass-bg: rgba(255, 255, 255, 0.72);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', 'Inter', sans-serif;
+        }
 
-    /* ===== VARIABLES ===== */
-    :root {
-      --bg: #0a0a0a;
-      --bg-secondary: #121212;
-      --text: #ffffff;
-      --text-secondary: #aaaaaa;
-      --gold: #d4af37;
-      --gold-light: #e8c84c;
-      --wedding-red: #C41E3A;
-      --wedding-red-light: #E8344E;
-      --glass-bg: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      --radius: 20px;
-      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    body.light-mode {
-      --bg: #f8f4f0;
-      --bg-secondary: #ffffff;
-      --text: #1a1a1a;
-      --text-secondary: #555555;
-      --glass-bg: rgba(0, 0, 0, 0.03);
-      --glass-border: rgba(0, 0, 0, 0.08);
-    }
+        body.dark {
+            --bg: #0F172A;
+            --surface: #1E293B;
+            --surface2: #2D3A52;
+            --text: #F1F5F9;
+            --sub: #94A3B8;
+            --border: #334155;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 12px 40px rgba(37, 99, 235, 0.25);
+            --glass-bg: rgba(15, 23, 42, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
 
-    /* ===== CONTAINER ===== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+        /* ============================================================
+           BASE
+           ============================================================ */
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* ===== SECTION ===== */
-    .section {
-      padding: 100px 0;
-      background: var(--bg);
-      transition: background 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 120%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .section-title {
-      font-size: 2.8rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 60px;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      position: relative;
-      z-index: 1;
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--wedding-red));
-      margin: 16px auto 0;
-      border-radius: 2px;
-      -webkit-text-fill-color: initial;
-    }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.4s, color 0.4s;
+            padding-bottom: 80px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-    /* ===== PRELOADER ===== */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      background: #0a0a0a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
-    }
-    #preloader.fade {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .loader-ring {
-      width: 70px;
-      height: 70px;
-      border: 4px solid rgba(212, 175, 55, 0.1);
-      border-top-color: var(--gold);
-      border-bottom-color: var(--wedding-red);
-      border-radius: 50%;
-      animation: spin 1.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-    }
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-    .loader-text {
-      margin-top: 24px;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 6px;
-    }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
 
-    /* ===== NAVBAR ===== */
-    #navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 16px 0;
-      background: rgba(10, 10, 10, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      z-index: 1000;
-      transition: 0.3s ease;
-    }
-    #navbar.scrolled {
-      background: rgba(10, 10, 10, 0.95);
-      padding: 10px 0;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-svg {
-      width: 45px;
-      height: 45px;
-      filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
-    }
-    .logo-text {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-    }
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      position: relative;
-      transition: 0.3s ease;
-      color: var(--text-secondary);
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--wedding-red));
-      transition: 0.3s ease;
-    }
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    #themeToggle {
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: 0.3s ease;
-      padding: 4px;
-    }
-    #themeToggle:hover {
-      color: var(--gold);
-      transform: rotate(30deg);
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      width: 28px;
-      height: 2px;
-      background: var(--text);
-      transition: 0.3s ease;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* ===== HERO ===== */
-    #hero {
-      height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-    .hero-background {
-      position: absolute;
-      inset: 0;
-    }
-    .hero-background img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      animation: scaleIn 8s ease-out forwards;
-    }
-    @keyframes scaleIn {
-      0% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      padding: 0 24px;
-    }
-    .hero-logo {
-      font-size: 5rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      background: rgba(10, 10, 10, 0.4);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      padding: 12px 36px;
-      border-radius: 80px;
-      display: inline-block;
-      margin-bottom: 24px;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
-    }
-    .hero-content h1 {
-      font-size: 4.5rem;
-      font-weight: 800;
-      letter-spacing: 6px;
-      color: #fff;
-      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    }
-    .hero-content .tagline {
-      font-size: 1.5rem;
-      font-weight: 300;
-      margin: 24px 0 40px;
-      color: rgba(255, 255, 255, 0.9);
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 16px 44px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      border: none;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.1);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s ease;
-    }
-    .btn:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      color: #fff;
-      box-shadow: 0 4px 30px rgba(196, 30, 58, 0.3);
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 40px rgba(196, 30, 58, 0.4);
-    }
-    .btn-outline {
-      border: 2px solid var(--gold);
-      color: #fff;
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      color: #fff;
-      border-color: transparent;
-      transform: translateY(-3px);
-    }
-    .scroll-indicator {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.8rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      animation: bounce 2s infinite;
-      z-index: 2;
-    }
-    @keyframes bounce {
-      0%,
-      100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      50% {
-        transform: translateX(-50%) translateY(12px);
-      }
-    }
+        /* ============================================================
+           GLASS NAVBAR
+           ============================================================ */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 12px 0;
+            transition: background 0.4s;
+        }
 
-    /* ===== ABOUT ===== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .about-text .subhead {
-      font-size: 1.3rem;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-    .about-text .subhead strong {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .about-text p {
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-    .stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 32px;
-    }
-    .stats div {
-      text-align: center;
-    }
-    .stats div span {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .stats div {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-    .about-photo img {
-      border-radius: var(--radius);
-      box-shadow: var(--glass-shadow);
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-      transition: var(--transition);
-      border: 2px solid transparent;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red)) border-box;
-      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      padding: 4px;
-    }
-    .about-photo img:hover {
-      transform: scale(1.02);
-    }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
 
-    /* ===== SERVICES ===== */
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-    }
-    .service-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      padding: 35px 25px;
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      opacity: 0;
-      transition: 0.4s ease;
-      z-index: 0;
-      border-radius: var(--radius);
-    }
-    .service-card:hover::before {
-      opacity: 0.08;
-    }
-    .service-card:hover {
-      transform: translateY(-10px);
-      border-color: var(--gold);
-      box-shadow: var(--glass-shadow);
-    }
-    .service-card * {
-      position: relative;
-      z-index: 1;
-    }
-    .service-card i {
-      font-size: 2.8rem;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 16px;
-      transition: var(--transition);
-    }
-    .service-card:hover i {
-      transform: scale(1.1);
-    }
-    .service-card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .service-card p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text);
+            flex-shrink: 0;
+        }
+        .nav-logo i {
+            color: var(--primary);
+            font-size: 24px;
+        }
+        .nav-logo span {
+            color: var(--primary);
+        }
 
-    /* ===== GALLERY ===== */
-    .gallery-masonry {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .gallery-item {
-      overflow: hidden;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: var(--transition);
-      position: relative;
-      border: 2px solid transparent;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red)) border-box;
-      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      padding: 4px;
-      background-color: #1a1a1a;
-      touch-action: manipulation;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      border-radius: calc(var(--radius) - 4px);
-      background: #222;
-      pointer-events: none;
-      /* important: let parent handle clicks */
-    }
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-    .gallery-item::after {
-      content: '🔍';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      font-size: 3rem;
-      color: #fff;
-      transition: 0.3s ease;
-      opacity: 0;
-      z-index: 2;
-      text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-      pointer-events: none;
-    }
-    .gallery-item:hover::after {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-    }
-    .gallery-item:nth-child(2) img {
-      height: 380px;
-    }
-    .gallery-item:nth-child(4) img {
-      height: 280px;
-    }
+        .nav-search {
+            flex: 1;
+            max-width: 500px;
+            min-width: 180px;
+            position: relative;
+        }
+        .nav-search input {
+            width: 100%;
+            padding: 10px 18px 10px 46px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 14px;
+            outline: none;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .nav-search input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+        .nav-search .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--sub);
+            font-size: 16px;
+        }
 
-    /* ===== LIGHTBOX ===== */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.93);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 40px;
-    }
-    .lightbox.show {
-      display: flex;
-    }
-    .lightbox img {
-      max-width: 85%;
-      max-height: 85%;
-      border-radius: 12px;
-      border: 3px solid var(--gold);
-      box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
-      object-fit: contain;
-      background: #111;
-    }
-    .lightbox .loading-spinner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px;
-      height: 50px;
-      border: 4px solid rgba(212, 175, 55, 0.1);
-      border-top: 4px solid var(--gold);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      z-index: -1;
-    }
-    .close-lightbox {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      font-size: 3.5rem;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s ease;
-      z-index: 2001;
-    }
-    .close-lightbox:hover {
-      color: var(--wedding-red);
-      transform: rotate(90deg);
-    }
-    .lightbox-prev,
-    .lightbox-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--glass-border);
-      color: #fff;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: 0.3s ease;
-      z-index: 2002;
-    }
-    .lightbox-prev {
-      left: 30px;
-    }
-    .lightbox-next {
-      right: 30px;
-    }
-    .lightbox-prev:hover,
-    .lightbox-next:hover {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      color: #fff;
-    }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .nav-btn {
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: transparent;
+            color: var(--sub);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font);
+        }
+        .nav-btn:hover {
+            background: var(--surface2);
+            color: var(--text);
+        }
+        .nav-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+        .nav-btn.primary:hover {
+            background: var(--primary-light);
+            transform: scale(0.96);
+        }
+        .dark-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dark-toggle:hover {
+            background: var(--surface2);
+        }
 
-    /* ===== WHY CHOOSE ===== */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-    }
-    .why-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      padding: 35px 20px;
-      text-align: center;
-      transition: var(--transition);
-    }
-    .why-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold);
-    }
-    .why-card i {
-      font-size: 2.5rem;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 12px;
-    }
-    .why-card h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .why-card p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #2563EB 100%);
+            border-radius: var(--radius);
+            padding: 60px 40px;
+            margin: 30px 0 40px;
+            position: relative;
+            overflow: hidden;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -40px;
+            bottom: -40px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.12);
+            pointer-events: none;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: -60px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.06);
+            pointer-events: none;
+        }
 
-    /* ===== PACKAGES ===== */
-    .package-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .package-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      padding: 40px 30px;
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .package-card.featured {
-      border: 2px solid;
-      border-image: linear-gradient(135deg, var(--gold), var(--wedding-red)) 1;
-      transform: scale(1.02);
-      box-shadow: 0 0 50px rgba(212, 175, 55, 0.08);
-    }
-    .package-card.featured::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .package-card:hover {
-      transform: translateY(-8px);
-    }
-    .package-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .package-card h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .package-card .price {
-      font-size: 2.4rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 16px 0 24px;
-    }
-    .package-card ul {
-      text-align: left;
-      margin: 24px 0;
-    }
-    .package-card ul li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--glass-border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-secondary);
-    }
-    .package-card ul li:last-child {
-      border-bottom: none;
-    }
-    .package-card ul li i {
-      color: var(--wedding-red);
-      font-size: 1rem;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 580px;
+        }
+        .hero-content .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sky);
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 38px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+        .hero-content h1 span {
+            color: var(--sky);
+        }
+        .hero-content p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+            max-width: 420px;
+            line-height: 1.6;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .hero-btn {
+            padding: 12px 30px;
+            border-radius: var(--radius-full);
+            border: none;
+            font-family: var(--font);
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-btn.primary {
+            background: white;
+            color: #0F172A;
+        }
+        .hero-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+        }
+        .hero-btn.secondary {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .hero-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
 
-    /* ===== TESTIMONIALS ===== */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .testimonial-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: var(--transition);
-    }
-    .testimonial-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-    }
-    .testimonial-card .stars {
-      color: var(--gold);
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      letter-spacing: 4px;
-    }
-    .testimonial-card .stars i {
-      color: var(--gold);
-    }
-    .testimonial-card p {
-      color: var(--text-secondary);
-      font-style: italic;
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-    .testimonial-card h4 {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 600;
-    }
+        .hero-illustration {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 100px;
+            opacity: 0.15;
+            pointer-events: none;
+            color: white;
+        }
 
-    /* ===== FAQ ===== */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .faq-item {
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      transition: var(--transition);
-    }
-    .faq-item:hover {
-      border-color: var(--gold);
-    }
-    .faq-item h3 {
-      margin-bottom: 10px;
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .faq-item h3 i {
-      font-size: 1.2rem;
-      -webkit-text-fill-color: initial;
-      color: var(--gold);
-    }
-    .faq-item p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 24px;
+                min-height: 280px;
+            }
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            .hero-illustration {
+                font-size: 60px;
+                right: 20px;
+            }
+        }
 
-    /* ===== CONTACT ===== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 50px;
-    }
-    .contact-info h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 12px;
-    }
-    .contact-info>p {
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 16px 20px;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 14px;
-      margin-bottom: 14px;
-      transition: var(--transition);
-    }
-    .contact-item:hover {
-      border-color: var(--gold);
-    }
-    .contact-item i {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 1.3rem;
-      width: 24px;
-    }
-    .contact-item div {
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-item span {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .contact-item a,
-    .contact-item p {
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .contact-item a:hover {
-      color: var(--gold);
-    }
-    .social-icons {
-      display: flex;
-      gap: 14px;
-      margin-top: 8px;
-      flex-wrap: wrap;
-    }
-    .social-icons a {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      transition: var(--transition);
-    }
-    .social-icons a:hover {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      color: #fff;
-      border-color: transparent;
-      transform: translateY(-4px);
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 16px 20px;
-      border-radius: 14px;
-      border: 1px solid var(--glass-border);
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      color: var(--text);
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-      transition: 0.3s ease;
-    }
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-      border-radius: 14px;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
-    }
-    .contact-form button {
-      align-self: flex-start;
-    }
-    .map-container {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--glass-border);
-    }
+        /* ============================================================
+           STATISTICS
+           ============================================================ */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 20px 16px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        .stat-card .number {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--sub);
+            margin-top: 4px;
+        }
+        .stat-card .icon {
+            font-size: 22px;
+            color: var(--primary-light);
+            opacity: 0.5;
+            margin-bottom: 4px;
+        }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #080808;
-      padding: 60px 0 30px;
-      border-top: 1px solid var(--glass-border);
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .footer-logo span {
-      font-size: 1.4rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .footer-brand p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-    .footer-links h4 {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 1rem;
-      margin-bottom: 16px;
-    }
-    .footer-links a {
-      display: block;
-      color: var(--text-secondary);
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-      transition: 0.3s ease;
-    }
-    .footer-links a:hover {
-      color: var(--gold);
-      padding-left: 6px;
-    }
-    .footer-social .social-icons {
-      margin-top: 8px;
-    }
-    .footer-bottom {
-      border-top: 1px solid var(--glass-border);
-      padding-top: 24px;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-    .footer-bottom strong {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        /* ============================================================
+           SECTION HEADER
+           ============================================================ */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .section-header h2 i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        .section-header .count {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--sub);
+            background: var(--surface2);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+        }
 
-    /* ===== FLOATING BUTTONS ===== */
-    .floating-buttons {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 1500;
-    }
-    .float-btn {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      color: #fff;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-      transition: var(--transition);
-    }
-    .float-btn:hover {
-      transform: scale(1.1) translateY(-4px);
-    }
-    .whatsapp {
-      background: #25d366;
-    }
-    .call {
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-    }
+        /* ============================================================
+           MODERN CARDS GRID - Practical Cards
+           ============================================================ */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
 
-    /* ===== SCROLL TO TOP ===== */
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 110px;
-      right: 32px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--wedding-red));
-      color: #fff;
-      border: none;
-      font-size: 1.4rem;
-      cursor: pointer;
-      display: none;
-      z-index: 1500;
-      transition: var(--transition);
-      box-shadow: 0 4px 20px rgba(196, 30, 58, 0.3);
-    }
-    #scrollTopBtn.show {
-      display: block;
-    }
-    #scrollTopBtn:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 30px rgba(196, 30, 58, 0.4);
-    }
+        .practical-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 22px 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .practical-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
+        }
+        .practical-card.hidden-card {
+            display: none;
+        }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-      }
-    }
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        background: rgba(10, 10, 10, 0.98);
-        backdrop-filter: blur(16px);
-        flex-direction: column;
-        align-items: center;
-        padding: 32px 0;
-        gap: 20px;
-        transform: translateY(-150%);
-        transition: 0.4s ease;
-        border-bottom: 1px solid var(--glass-border);
-      }
-      .nav-links.open {
-        transform: translateY(0);
-      }
-      .hamburger {
-        display: flex;
-      }
-      .hero-content h1 {
-        font-size: 2.8rem;
-        letter-spacing: 3px;
-      }
-      .hero-logo {
-        font-size: 3.5rem;
-        padding: 8px 24px;
-      }
-      .hero-content .tagline {
-        font-size: 1.1rem;
-      }
-      .section-title {
-        font-size: 2rem;
-      }
-      .section {
-        padding: 60px 0;
-      }
-      .gallery-masonry {
-        grid-template-columns: 1fr 1fr;
-      }
-      .gallery-item img {
-        height: 220px !important;
-      }
-      .stats {
-        gap: 20px;
-      }
-      .stats div span {
-        font-size: 2rem;
-      }
-      .package-grid {
-        grid-template-columns: 1fr;
-      }
-      .package-card.featured {
-        transform: scale(1);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .footer-social .social-icons {
-        justify-content: center;
-      }
-      .lightbox-prev {
-        left: 10px;
-      }
-      .lightbox-next {
-        right: 10px;
-      }
-      .lightbox-prev,
-      .lightbox-next {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-    }
-    @media (max-width: 480px) {
-      .gallery-masonry {
-        grid-template-columns: 1fr;
-      }
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      .btn {
-        padding: 12px 28px;
-        font-size: 0.9rem;
-      }
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      .contact-item {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+        .practical-card .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .practical-card .card-header h3 {
+            font-family: var(--font-heading);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+        .practical-card .card-header .badge {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 2px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .practical-card .mat-list {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 13px;
+            color: var(--sub);
+            margin: 8px 0 12px;
+            border-left: 3px solid var(--primary);
+        }
+        .practical-card .mat-list strong {
+            color: var(--text);
+        }
+
+        .practical-card .step-list {
+            padding-left: 18px;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 6px 0 12px;
+        }
+        .practical-card .step-list li {
+            margin-bottom: 4px;
+        }
+
+        .practical-card .viva-box {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            border-left: 3px solid var(--primary);
+        }
+        .practical-card .viva-box .viva-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .practical-card .viva-item {
+            padding: 3px 0;
+            font-size: 13px;
+            border-bottom: 1px dashed var(--border);
+        }
+        .practical-card .viva-item:last-child {
+            border-bottom: none;
+        }
+        .practical-card .viva-item strong {
+            color: var(--text);
+        }
+
+        .practical-card .exam-points {
+            background: #fef7e6;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 13px;
+            border: 1px solid #f1dba8;
+            color: #3f3a1a;
+            margin-top: 10px;
+        }
+        body.dark .practical-card .exam-points {
+            background: #2d281a;
+            border-color: #5f531a;
+            color: #f5eab0;
+        }
+        .practical-card .exam-points strong {
+            color: #b48b2c;
+        }
+        body.dark .practical-card .exam-points strong {
+            color: #e5c65a;
+        }
+
+        .practical-card .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 12px;
+            gap: 8px;
+        }
+        .practical-card .card-footer .q-count {
+            font-size: 12px;
+            color: var(--sub);
+        }
+        .practical-card .card-footer .open-btn {
+            padding: 5px 16px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .practical-card .card-footer .open-btn:hover {
+            background: var(--primary-light);
+            transform: scale(0.95);
+        }
+
+        /* ============================================================
+           PROGRESS BAR (Per Practical)
+           ============================================================ */
+        .progress-bar-wrap {
+            margin: 6px 0 10px;
+        }
+        .progress-bar-wrap .label-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--sub);
+            margin-bottom: 2px;
+        }
+        .progress-track {
+            height: 6px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-track .fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--sky));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        /* ============================================================
+           REVISION SECTION
+           ============================================================ */
+        .revision-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px 24px;
+            margin: 30px 0;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .revision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .revision-item {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 12px 16px;
+            border-left: 3px solid var(--primary);
+            font-size: 13px;
+        }
+        .revision-item strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
+        /* ============================================================
+           MOCK TEST SECTION
+           ============================================================ */
+        .quiz-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0;
+        }
+        .quiz-btn {
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .quiz-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .quiz-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .quiz-btn.primary-btn {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .quiz-btn.primary-btn:hover {
+            background: var(--primary-light);
+        }
+
+        .quiz-container {
+            margin-top: 16px;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            display: none;
+        }
+        .quiz-container.active {
+            display: block;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            gap: 8px;
+        }
+        .quiz-timer {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--danger, #ea4335);
+        }
+        .quiz-progress {
+            font-size: 14px;
+            color: var(--sub);
+        }
+
+        .quiz-question {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .quiz-options-list label {
+            display: block;
+            padding: 10px 16px;
+            margin: 6px 0;
+            background: var(--surface);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+        .quiz-options-list label:hover {
+            border-color: var(--primary);
+        }
+        .quiz-options-list input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .quiz-result {
+            margin-top: 16px;
+            padding: 16px;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            display: none;
+        }
+        .quiz-result.active {
+            display: block;
+        }
+
+        /* ============================================================
+           CERTIFICATE
+           ============================================================ */
+        .certificate-box {
+            margin-top: 16px;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 2px solid #F59E0B;
+            text-align: center;
+            display: none;
+        }
+        .certificate-box.active {
+            display: block;
+        }
+        .certificate-box .cert-icon {
+            font-size: 48px;
+            color: #F59E0B;
+        }
+        .certificate-box .cert-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .certificate-box .cert-btn {
+            margin-top: 12px;
+            padding: 8px 24px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font);
+            transition: var(--transition);
+        }
+        .certificate-box .cert-btn:hover {
+            background: var(--primary-light);
+        }
+
+        /* ============================================================
+           AI SECTION
+           ============================================================ */
+        .ai-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px 24px;
+            margin: 30px 0;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .ai-chat {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .ai-chat input {
+            flex: 1;
+            padding: 10px 18px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 14px;
+            min-width: 180px;
+            outline: none;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .ai-chat input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+        .ai-chat button {
+            padding: 10px 28px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            font-family: var(--font);
+        }
+        .ai-chat button:hover {
+            background: var(--primary-light);
+            transform: scale(0.96);
+        }
+
+        .ai-response {
+            margin-top: 16px;
+            padding: 16px 20px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+            display: none;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+        .ai-response.active {
+            display: block;
+        }
+
+        /* ============================================================
+           BOTTOM NAVIGATION
+           ============================================================ */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid var(--glass-border);
+            padding: 6px 0 env(safe-area-inset-bottom, 8px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            text-decoration: none;
+            color: var(--sub);
+            font-size: 10px;
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-family: var(--font);
+        }
+        .bottom-nav .nav-item i {
+            font-size: 22px;
+            transition: var(--transition);
+        }
+        .bottom-nav .nav-item.active {
+            color: var(--primary);
+        }
+        .bottom-nav .nav-item.active i {
+            transform: scale(1.05);
+        }
+        .bottom-nav .nav-item:hover {
+            color: var(--primary);
+            background: var(--surface2);
+        }
+
+        /* ============================================================
+           FLOATING BUTTON
+           ============================================================ */
+        .floating-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            z-index: 998;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .floating-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.5);
+        }
+        .floating-btn .tooltip {
+            position: absolute;
+            right: 68px;
+            background: var(--surface);
+            color: var(--text);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+        .floating-btn:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .app-footer {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 30px 24px;
+            margin-top: 30px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        .app-footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+        }
+        .app-footer h4 {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .app-footer p,
+        .app-footer a {
+            font-size: 13px;
+            color: var(--sub);
+            text-decoration: none;
+            display: block;
+            margin: 4px 0;
+            transition: var(--transition);
+        }
+        .app-footer a:hover {
+            color: var(--primary);
+        }
+        .app-footer .version {
+            font-size: 12px;
+            color: var(--sub);
+            opacity: 0.6;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            .navbar .container {
+                gap: 10px;
+            }
+            .nav-search {
+                order: 3;
+                flex: 1 1 100%;
+            }
+            .nav-logo {
+                font-size: 18px;
+            }
+            .hero {
+                padding: 32px 20px;
+                min-height: 220px;
+            }
+            .hero-content h1 {
+                font-size: 24px;
+            }
+            .hero-content p {
+                font-size: 14px;
+            }
+            .hero-illustration {
+                display: none;
+            }
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .bottom-nav .nav-item {
+                padding: 4px 10px;
+                font-size: 9px;
+            }
+            .bottom-nav .nav-item i {
+                font-size: 18px;
+            }
+            .floating-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+                bottom: 80px;
+                right: 16px;
+            }
+            .floating-btn .tooltip {
+                display: none;
+            }
+            .revision-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 20px;
+            }
+            .hero-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+            .stat-card .number {
+                font-size: 24px;
+            }
+            .revision-grid {
+                grid-template-columns: 1fr;
+            }
+            .practical-card .card-header h3 {
+                font-size: 15px;
+            }
+        }
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            padding-top: 100%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            opacity: 0;
+            pointer-events: none;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+        .ripple:active::after {
+            animation: rippleAnim 0.5s ease;
+        }
+        @keyframes rippleAnim {
+            to {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* ============================================================
+           UTILITY
+           ============================================================ */
+        .hidden {
+            display: none !important;
+        }
+        .mt-12 {
+            margin-top: 12px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .no-match {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--sub);
+            grid-column: 1 / -1;
+        }
+        .no-match .icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- ===== PRELOADER ===== -->
-  <div id="preloader">
-    <div class="loader-ring"></div>
-    <div class="loader-text">VIVEK STUDIO</div>
-  </div>
+    <!-- ===== GLASS NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                ITI <span>Exam</span>
+            </a>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <div class="logo" data-aos="fade-right">
-        <svg class="logo-svg" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldRedNav)" stroke-width="4" />
-          <circle cx="35" cy="50" r="14" fill="none" stroke="url(#goldRedNav)" stroke-width="3" />
-          <circle cx="65" cy="50" r="14" fill="none" stroke="url(#goldRedNav)" stroke-width="3" />
-          <text x="50" y="58" font-family="Poppins, sans-serif" font-size="28" font-weight="800" fill="#d4af37" text-anchor="middle">VS</text>
-          <defs>
-            <linearGradient id="goldRedNav" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#d4af37" />
-              <stop offset="100%" stop-color="#C41E3A" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <span class="logo-text">Vivek Studio</span>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button id="themeToggle" aria-label="Toggle theme">
-          <i class="fas fa-moon"></i>
+            <div class="nav-search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="प्रैक्टिकल खोजें... (OFC, SMPS, SMD...)" />
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-btn primary" id="startQuizBtnNav">
+                    <i class="fas fa-bolt"></i> टेस्ट
+                </button>
+                <button class="dark-toggle" id="darkToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="container">
+        <div class="hero fade-up">
+            <div class="hero-content">
+                <div class="badge"><i class="fas fa-calendar-alt"></i> 2026 · नया सिलेबस</div>
+                <h1>📚 ITI Exam <br><span>Theory 2026</span></h1>
+                <p>Prepare Smart · Practice Daily · Pass Easily</p>
+                <div class="hero-buttons">
+                    <button class="hero-btn primary" id="scrollToCards">
+                        <i class="fas fa-rocket"></i> Start Learning
+                    </button>
+                    <button class="hero-btn secondary" id="scrollToQuiz">
+                        <i class="fas fa-clipboard-list"></i> Mock Test
+                    </button>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <i class="fas fa-brain"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATISTICS ===== -->
+    <section class="container">
+        <div class="stats-section">
+            <div class="stat-card fade-up delay-1">
+                <div class="icon"><i class="fas fa-question-circle"></i></div>
+                <div class="number" data-count="8">0</div>
+                <div class="label">Practicals</div>
+            </div>
+            <div class="stat-card fade-up delay-2">
+                <div class="icon"><i class="fas fa-book"></i></div>
+                <div class="number" data-count="32">0</div>
+                <div class="label">VIVA Q&A</div>
+            </div>
+            <div class="stat-card fade-up delay-3">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <div class="number" data-count="1000">0</div>
+                <div class="label">Students</div>
+            </div>
+            <div class="stat-card fade-up delay-4">
+                <div class="icon"><i class="fas fa-trophy"></i></div>
+                <div class="number" data-count="98">0</div>
+                <div class="label">Pass Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRACTICAL CARDS ===== -->
+    <section class="container" id="subjectsSection">
+        <div class="section-header">
+            <h2><i class="fas fa-microchip"></i> प्रैक्टिकल्स (Practicals)</h2>
+            <span class="count" id="cardCount">8 प्रैक्टिकल</span>
+        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
+    </section>
+
+    <!-- ===== REVISION SECTION ===== -->
+    <section class="container">
+        <div class="revision-section" id="revisionSection">
+            <div class="section-header">
+                <h2><i class="fas fa-clock"></i> 1-मिनट रिवीजन</h2>
+                <span class="count">8 ट्रिक्स</span>
+            </div>
+            <div class="revision-grid" id="revisionGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== MOCK TEST SECTION ===== -->
+    <section class="container" id="mockTestSection">
+        <div class="quiz-section" id="mockSection">
+            <div class="section-header">
+                <h2><i class="fas fa-clipboard-check"></i> मॉक टेस्ट</h2>
+                <span class="count">अपनी तैयारी जांचें</span>
+            </div>
+            <div class="quiz-options">
+                <button class="quiz-btn active" data-questions="10">10 प्रश्न</button>
+                <button class="quiz-btn" data-questions="25">25 प्रश्न</button>
+                <button class="quiz-btn" data-questions="50">50 प्रश्न</button>
+                <button class="quiz-btn primary-btn" id="startQuizBtn">▶️ शुरू करें</button>
+            </div>
+
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-header">
+                    <span class="quiz-timer" id="quizTimer">⏱️ 00:00</span>
+                    <span class="quiz-progress" id="quizProgress">प्रश्न 1/10</span>
+                </div>
+                <div id="quizQuestion" class="quiz-question">प्रश्न...</div>
+                <div class="quiz-options-list" id="quizOptions"></div>
+                <button class="quiz-btn primary-btn" id="nextQuizBtn" style="margin-top:12px;">अगला →</button>
+                <div class="quiz-result" id="quizResult">
+                    <h4 style="color:var(--primary);">🏆 परिणाम</h4>
+                    <p id="quizScore" style="font-size:20px;font-weight:700;">स्कोर: 0/0</p>
+                    <p id="quizRank">रैंक: --</p>
+                    <div id="wrongAnswers"></div>
+                    <button class="quiz-btn" id="resetQuizBtn" style="margin-top:12px;">🔄 दोबारा</button>
+                </div>
+                <div class="certificate-box" id="certificateBox">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div class="cert-title">🎉 प्रमाणपत्र (Certificate)</div>
+                    <p style="color:var(--sub);font-size:14px;">आपने मॉक टेस्ट पास किया!</p>
+                    <button class="cert-btn" id="downloadCertBtn"><i class="fas fa-download"></i> PDF डाउनलोड करें</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AI SECTION ===== -->
+    <section class="container">
+        <div class="ai-section" id="aiSection">
+            <div class="section-header">
+                <h2><i class="fas fa-robot"></i> AI डाउट सॉल्वर</h2>
+                <span class="count">तुरंत जवाब</span>
+            </div>
+            <div class="ai-chat">
+                <input type="text" id="aiInput" placeholder="कोई सवाल पूछें... (जैसे: SMPS क्या है?)" />
+                <button id="aiAskBtn"><i class="fas fa-paper-plane"></i> पूछें</button>
+            </div>
+            <div class="ai-response" id="aiResponse">
+                <strong>🤖 AI उत्तर:</strong>
+                <p id="aiAnswer">यहाँ उत्तर आएगा...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="container">
+        <div class="app-footer">
+            <div class="footer-grid">
+                <div>
+                    <h4><i class="fas fa-graduation-cap" style="color:var(--primary);"></i> ITI Exam Theory</h4>
+                    <p>Made by Miss Iti</p>
+                    <p>Version 2.0</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div>
+                    <h4>Follow</h4>
+                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="version">© 2026 ITI Exam Theory · Made with ❤️ in India</div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTTOM NAVIGATION ===== -->
+    <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-item active" data-tab="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
         </button>
-        <div class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-  </nav>
+        <button class="nav-item" data-tab="theory">
+            <i class="fas fa-book"></i>
+            <span>Theory</span>
+        </button>
+        <button class="nav-item" data-tab="mock">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Mock Test</span>
+        </button>
+        <button class="nav-item" data-tab="profile">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </button>
+    </nav>
 
-  <!-- ===== HERO ===== -->
-  <section id="hero">
-    <div class="hero-background">
-      <!-- YOUR ORIGINAL HERO IMAGE -->
-      <img src="https://i.ibb.co/j9f8fwdX/DSC-0762.jpg" alt="Vivek Wedding Studio Hero" />
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
-      <div class="hero-logo">VS</div>
-      <h1>Vivek Wedding Studio</h1>
-      <p class="tagline">Capturing Emotions Forever ❤️</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Book Now</a>
-        <a href="#gallery" class="btn btn-outline">View Portfolio</a>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
+    <!-- ===== FLOATING BUTTON ===== -->
+    <button class="floating-btn" id="floatingBtn">
+        <i class="fas fa-arrow-up"></i>
+        <span class="tooltip">Top</span>
+    </button>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">About Us</h2>
-      <div class="about-grid">
-        <div class="about-text" data-aos="fade-right">
-          <p class="subhead">I'm <strong>Vivek Roy</strong>, a passionate wedding storyteller based in <strong>Begusarai, Bihar</strong>.</p>
-          <p>With over <strong>8+ years</strong> of experience, I blend candid emotions with cinematic artistry to create timeless memories. My mission is to make every couple feel like royalty on their special day.</p>
-          <p>From intimate ceremonies to grand celebrations, we capture every laugh, tear, and dance move with perfection.</p>
-          <div class="stats" id="stats">
-            <div><span class="counter" data-target="8">0</span>+ Years</div>
-            <div><span class="counter" data-target="520">0</span>+ Weddings</div>
-            <div><span class="counter" data-target="35">0</span>+ Awards</div>
-          </div>
-        </div>
-        <div class="about-photo" data-aos="fade-left">
-          <!-- YOUR ORIGINAL ABOUT IMAGE -->
-          <img src="https://i.ibb.co/B5nTHcZD/DSC-0763.jpg" alt="Vivek Roy" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </section>
+    <script>
+        (function() {
+            'use strict';
 
-  <!-- ===== SERVICES ===== -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Our Services</h2>
-      <div class="service-grid">
-        <div class="service-card" data-aos="zoom-in"><i class="fas fa-camera"></i><h3>Wedding Photography</h3><p>Candid & traditional coverage</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="50"><i class="fas fa-video"></i><h3>Cinematic Videography</h3><p>Cinematic films & highlights</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-drone"></i><h3>Drone Shoot</h3><p>Aerial wedding shots</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-heart"></i><h3>Pre-Wedding Shoot</h3><p>Romantic couple shoots</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-ring"></i><h3>Engagement Shoot</h3><p>Ring ceremonies</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-paint-brush"></i><h3>Haldi & Mehendi</h3><p>Colorful pre-wedding rituals</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-glass-cheers"></i><h3>Reception</h3><p>Elegant reception coverage</p></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-birthday-cake"></i><h3>Birthday Shoot</h3><p>Milestone celebrations</p></div>
-      </div>
-    </div>
-  </section>
+            // ============================================================
+            // DATA - 8 PRACTICALS (Miss Iti के अनुसार)
+            // ============================================================
+            const practicals = [{
+                id: 1,
+                title: 'ऑप्टिकल फाइबर कम्युनिकेशन (OFC)',
+                icon: 'fa-wifi',
+                color: '#2563EB',
+                materials: 'Optical fiber trainer kit, OFC cables, OFC data manual, Patch cords',
+                steps: [
+                    'OFC trainer kit को चालू करें और Patch cords से फाइबर लिंक सेट करें।',
+                    'ट्रांसमीटर से सिग्नल भेजकर रिसीवर पर आउटपुट चेक करें।',
+                    'फाइबर को अलग-अलग कोण पर मोड़कर बेंडिंग लॉस मापें।',
+                    'पावर मीटर से एटेन्यूएशन (loss) को dB में रिकॉर्ड करें।'
+                ],
+                viva: [
+                    { q: 'OFC में किस सिद्धांत का उपयोग होता है?', a: 'कुल आंतरिक परावर्तन (Total Internal Reflection)' },
+                    { q: 'फाइबर के प्रकार बताएँ?', a: 'सिंगल-मोड और मल्टी-मोड' },
+                    { q: 'बेंडिंग लॉस क्यों होता है?', a: 'फाइबर के अत्यधिक झुकने से प्रकाश बाहर निकल जाता है।' },
+                    { q: 'एटेन्यूएशन का मुख्य कारण?', a: 'अवशोषण, स्कैटरिंग और बेंडिंग' }
+                ],
+                points: 'OFC = प्रकाश से डाटा, नॉइज कम, बैंडविड्थ अधिक। बेंडिंग लॉस से बचें।',
+                progress: 80
+            }, {
+                id: 2,
+                title: 'SMPS & PC Troubleshooting',
+                icon: 'fa-plug',
+                color: '#F59E0B',
+                materials: 'Computer SMPS, Desktop PC with cabinet, Digital multimeter',
+                steps: [
+                    'SMPS के 20/24 पिन कनेक्टर पर मल्टीमीटर से वोल्टेज मापें (3.3V, 5V, 12V, -12V)।',
+                    'PC को चालू करें और POST बीप कोड सुनें (एक बीप = सही, लंबी बीप = RAM फॉल्ट)',
+                    'मदरबोर्ड पर कैपेसिटर बल्ज/लीकेज चेक करें।',
+                    'PSU को बदलकर या कनेक्टर रिसीट करके ट्रबलशूट करें।'
+                ],
+                viva: [
+                    { q: 'SMPS का पूरा नाम?', a: 'Switched Mode Power Supply' },
+                    { q: 'POST क्या है?', a: 'Power-On Self Test' },
+                    { q: 'PSU में कौन-से वोल्टेज होते हैं?', a: '3.3V, 5V, 12V, -12V और PG (Power Good)' },
+                    { q: 'SMPS खराब होने पर क्या लक्षण?', a: 'PC ON नहीं होता, रीबूट, बीप कोड' }
+                ],
+                points: 'SMPS = स्विचिंग से पावर, हाई दक्षता। वोल्टेज मापना सबसे जरूरी।',
+                progress: 70
+            }, {
+                id: 3,
+                title: 'LCD/LED TV & Media Interface',
+                icon: 'fa-tv',
+                color: '#38BDF8',
+                materials: 'LCD/LED TV, Media source with HDMI, RCA, USB output, CRO/DSO',
+                steps: [
+                    'HDMI/RCA केबल से TV को मीडिया सोर्स से कनेक्ट करें।',
+                    'TV के इनपुट सोर्स को चयनित करें और डिस्प्ले चेक करें।',
+                    'CRO/DSO प्रोब को वीडियो या ऑडियो आउटपुट से जोड़कर वेवफॉर्म देखें।',
+                    'USB ड्राइव से मीडिया चलाकर प्लेबैक टेस्ट करें।'
+                ],
+                viva: [
+                    { q: 'LCD और LED में मुख्य अंतर?', a: 'LED में LED बैकलाइट, LCD में CCFL; LED पतला व कम बिजली' },
+                    { q: 'HDMI और RCA में क्या फर्क?', a: 'HDMI डिजिटल (AV), RCA एनालॉग (केवल वीडियो/ऑडियो)' },
+                    { q: 'CRO पर वीडियो सिग्नल कैसा दिखता है?', a: 'सिंक और ब्लैंकिंग पल्स के साथ कंपोजिट वीडियो' },
+                    { q: 'TV में बैकलाइट इन्वर्टर का काम?', a: 'LED/CCFL के लिए HV AC बनाना' }
+                ],
+                points: 'LED TV = बेहतर कंट्रास्ट, HDMI = बेस्ट क्वालिटी। CRO से सिग्नल चेक करें।',
+                progress: 65
+            }, {
+                id: 4,
+                title: 'ऑडियो सिस्टम और PA एम्पलीफायर',
+                icon: 'fa-music',
+                color: '#EC4899',
+                materials: 'Audio signal source, Microphone (Dynamic), Loudspeaker/Headphone, 3.5 mm cables & adapters, CRO',
+                steps: [
+                    'माइक्रोफोन को ऑडियो एम्पलीफायर से कनेक्ट करें।',
+                    'ऑडियो सोर्स (मोबाइल) से 3.5mm केबल द्वारा सिग्नल दें।',
+                    'स्पीकर/हेडफोन से आउटपुट सुनें और CRO पर वेवफॉर्म देखें।',
+                    'गेन (वॉल्यूम) बदलकर एम्पलीट्यूड परिवर्तन मापें।'
+                ],
+                viva: [
+                    { q: 'माइक्रोफोन कितने प्रकार का होता है?', a: 'डायनेमिक, कंडेंसर, रिबन' },
+                    { q: 'एम्पलीफायर की गेन किसे कहते हैं?', a: 'आउटपुट वोल्टेज / इनपुट वोल्टेज का अनुपात' },
+                    { q: 'THD का मतलब?', a: 'Total Harmonic Distortion — कम THD = साफ आवाज' },
+                    { q: 'स्पीकर का इम्पीडेंस (4Ω/8Ω) क्यों महत्वपूर्ण?', a: 'एम्पलीफायर मैचिंग के लिए' }
+                ],
+                points: 'PA सिस्टम = माइक + एम्पलीफायर + स्पीकर। CRO से वेवफॉर्म देखें।',
+                progress: 55
+            }, {
+                id: 5,
+                title: 'SMD Soldering & Desoldering',
+                icon: 'fa-microscope',
+                color: '#8B5CF6',
+                materials: 'SMD soldering workstation, Rosin cored solder, Solder flux pen, Magnifier with lamp, Cleaning brush, IPA solution',
+                steps: [
+                    'PCB पैड पर सोल्डर पेस्ट लगाएँ (स्टेंसिल या सुई से)।',
+                    'SMD कंपोनेंट (R, C, IC) को चिमटी से प्लेस करें।',
+                    'हॉट एयर (300°C) से पेस्ट पिघलाकर सोल्डर करें।',
+                    'डी-सोल्डरिंग के लिए हॉट एयर + सक्शन पेन का उपयोग करें।',
+                    'सोल्डरिंग के बाद मैग्नीफायर से जॉइंट चेक करें और IPA से क्लीन करें।'
+                ],
+                viva: [
+                    { q: 'SMD का पूरा नाम?', a: 'Surface Mount Device' },
+                    { q: 'सोल्डरिंग में किस मिश्र धातु का उपयोग?', a: 'Sn-Pb (लेडेड) या SAC (लेड-फ्री)' },
+                    { q: 'हॉट एयर का तापमान कितना रखें?', a: '300-350°C, पिघलने के लिए' },
+                    { q: 'IPA सॉल्यूशन क्यों उपयोग करें?', a: 'फ्लक्स और गंदगी हटाने के लिए' }
+                ],
+                points: 'SMD = छोटा, सटीकता चाहिए। हॉट एयर का तापमान और समय महत्वपूर्ण।',
+                progress: 60
+            }, {
+                id: 6,
+                title: 'DSO/CRO Waveform Analysis',
+                icon: 'fa-chart-line',
+                color: '#EF4444',
+                materials: 'CRO (0-20) MHz / DSO, Audio signal source, Patch cords',
+                steps: [
+                    'CRO/DSO को चालू करें और प्रोब को चैनल 1 से जोड़ें।',
+                    'कैलिब्रेशन (1kHz, 1V) सेटिंग चेक करें।',
+                    'ऑडियो सोर्स से 1kHz साइन वेव दें और वेवफॉर्म देखें।',
+                    'वोल्ट/डिव और टाइम/डिव सेट करके आवृत्ति (f) और आयाम (Vp-p) मापें।'
+                ],
+                viva: [
+                    { q: 'DSO और CRO में अंतर?', a: 'DSO डिजिटल, मेमोरी, माप आसान; CRO एनालॉग' },
+                    { q: 'प्रोब का attenuator क्या करता है?', a: 'सिग्नल को 10x या 1x कम करना' },
+                    { q: 'ट्रिगर (Trigger) क्यों जरूरी?', a: 'वेवफॉर्म को स्टेबल करने के लिए' },
+                    { q: 'फ्रीक्वेंसी कैसे मापेंगे?', a: 'समय अवधि (T) मापकर f=1/T' }
+                ],
+                points: 'DSO = डिजिटल स्टोरेज, सटीक माप। वेवफॉर्म से सिग्नल की जानकारी।',
+                progress: 75
+            }, {
+                id: 7,
+                title: 'Crimping & Interconnection',
+                icon: 'fa-tools',
+                color: '#14B8A6',
+                materials: 'Crimping tools, 3.5 mm stereo EP to EP cable, 6 mm to 3.5 mm phono adapter',
+                steps: [
+                    'स्टीरियो केबल को स्ट्रिप करके तारों (L/R/GND) को छीलें।',
+                    '3.5mm जैक में तारों को सही पिन पर सोल्डर/क्रिम्प करें।',
+                    'Phono (RCA) to Stereo एडॉप्टर बनाएँ।',
+                    'केबल टेस्टर से कंटीन्यूटी चेक करें और ऑडियो/वीडियो पैच करें।'
+                ],
+                viva: [
+                    { q: 'RJ45 में कितने पिन होते हैं?', a: '8 पिन (RJ11 में 4 या 6)' },
+                    { q: 'क्रिम्पिंग टूल का क्या काम?', a: 'कनेक्टर को केबल से मजबूती से जोड़ना' },
+                    { q: 'Phono और 3.5mm में क्या अंतर?', a: 'Phono RCA (6mm), 3.5mm stereo (मिनी जैक)' },
+                    { q: 'कंटीन्यूटी टेस्ट क्यों करते हैं?', a: 'सही कनेक्शन और शॉर्ट चेक करने के लिए' }
+                ],
+                points: 'क्रिम्पिंग = सही पिन आउट + मजबूत जोड़। मल्टीमीटर से कंटीन्यूटी जरूर चेक करें।',
+                progress: 45
+            }, {
+                id: 8,
+                title: 'Component Testing & Circuit Assembly',
+                icon: 'fa-microchip',
+                color: '#10B981',
+                materials: 'Trainees tool kit, Digital multimeter with probes, RC solder, Paper clip',
+                steps: [
+                    'मल्टीमीटर को रेजिस्टेंस मोड में रखकर अलग-अलग R मापें।',
+                    'कैपेसिटर को कैपेसिटेंस मोड से चेक करें।',
+                    'पेपर क्लिप या जम्पर का उपयोग करके सर्किट को ब्रेडबोर्ड पर असेंबल करें।',
+                    'टूल किट (कटर, प्लायर) से PCB पर कंपोनेंट लगाकर सोल्डर करें।'
+                ],
+                viva: [
+                    { q: 'रेजिस्टेंस मापने के लिए मल्टीमीटर का कौन-सा मोड?', a: 'Ω मोड (200Ω से 2000kΩ)' },
+                    { q: 'कैपेसिटर कैसे टेस्ट करें?', a: 'कैपेसिटेंस मोड या ESR मीटर से' },
+                    { q: 'ट्रेनी टूल किट में क्या-क्या होता है?', a: 'कटर, प्लायर, स्क्रू ड्राइवर, सोल्डरिंग आयरन' },
+                    { q: 'सोल्डरिंग में रोजिन (flux) का क्या उपयोग?', a: 'ऑक्साइड हटाकर अच्छा जोड़ बनाना' }
+                ],
+                points: 'मल्टीमीटर से R और C चेक करें। सोल्डरिंग से पहले साफ-सफाई जरूरी।',
+                progress: 50
+            }];
 
-  <!-- ===== GALLERY ===== -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Portfolio Gallery</h2>
-      <div class="gallery-masonry" id="galleryMasonry">
-        <!-- YOUR ORIGINAL GALLERY IMAGES (repeated for 6 items) -->
-        <div class="gallery-item" data-aos="fade-up">
-          <img src="https://i.ibb.co/nM2mtcYx/DSC-0779.jpg" alt="Wedding 1" loading="lazy" />
-        </div>
-        <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-          <img src="https://i.ibb.co/qMkb01c2/DSC-0776.jpg" alt="Wedding 2" loading="lazy" />
-        </div>
-        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://i.ibb.co/W49f9n3F/IMG-20260701-145308.jpg" alt="Wedding 3" loading="lazy" />
-        </div>
-        <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-          <img src="https://i.ibb.co/nM2mtcYx/DSC-0779.jpg" alt="Wedding 4" loading="lazy" />
-        </div>
-        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://i.ibb.co/qMkb01c2/DSC-0776.jpg" alt="Wedding 5" loading="lazy" />
-        </div>
-        <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
-          <img src="https://i.ibb.co/W49f9n3F/IMG-20260701-145308.jpg" alt="Wedding 6" loading="lazy" />
-        </div>
-      </div>
-    </div>
+            // ============================================================
+            // MOCK TEST QUESTIONS (50)
+            // ============================================================
+            const allQuestions = [
+                { q: 'OFC में किस सिद्धांत का उपयोग होता है?', options: ['परावर्तन', 'अपवर्तन', 'कुल आंतरिक परावर्तन',
+                        'विभाजन'
+                    ], correct: 2 },
+                { q: 'SMPS का पूरा नाम क्या है?', options: ['Switched Mode Power Supply', 'Single Mode Power Supply',
+                        'System Mode Power Supply', 'Simple Power Supply'
+                    ], correct: 0 },
+                { q: 'LED TV में किसका उपयोग होता है?', options: ['CCFL', 'LED बैकलाइट', 'प्लाज्मा', 'LCD पैनल'],
+                    correct: 1 },
+                { q: 'SMD का पूरा नाम क्या है?', options: ['Surface Mount Device', 'Simple Mount Device',
+                        'System Mount Device', 'Standard Mount Device'
+                    ], correct: 0 },
+                { q: 'DSO और CRO में मुख्य अंतर क्या है?', options: ['DSO डिजिटल है', 'CRO डिजिटल है', 'दोनों समान हैं',
+                        'DSO एनालॉग है'
+                    ], correct: 0 },
+                { q: 'RJ45 कनेक्टर में कितने पिन होते हैं?', options: ['4', '6', '8', '10'], correct: 2 },
+                { q: 'ट्रांजिस्टर की पहचान कैसे करें?', options: ['रंग से', 'डेटाशीट से', 'आकार से', 'सबसे सही उत्तर है डेटाशीट से'],
+                    correct: 1 },
+                { q: 'THD का मतलब क्या है?', options: ['Total Harmonic Distortion', 'Total High Definition',
+                        'Tuned High Distortion', 'None'
+                    ], correct: 0 },
+                { q: 'OFC में किस तरंग का उपयोग होता है?', options: ['रेडियो', 'माइक्रोवेव', 'प्रकाश', 'ध्वनि'],
+                    correct: 2 },
+                { q: 'SMPS में कौन-सा वोल्टेज नहीं होता?', options: ['3.3V', '5V', '12V', '24V'], correct: 3 },
+                { q: 'HDMI किस प्रकार का सिग्नल है?', options: ['एनालॉग', 'डिजिटल', 'FM', 'AM'], correct: 1 },
+                { q: 'सोल्डरिंग में फ्लक्स का क्या उपयोग?', options: ['ऑक्साइड हटाना', 'गर्मी बढ़ाना', 'सोल्डर पिघलाना', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'CRO में ट्रिगर का क्या काम?', options: ['वेवफॉर्म स्टेबल करना', 'वोल्टेज मापना', 'आवृत्ति मापना',
+                        'कोई नहीं'
+                    ], correct: 0 },
+                { q: 'क्रिम्पिंग टूल का क्या काम?', options: ['सोल्डर करना', 'कनेक्टर जोड़ना', 'केबल काटना', 'टेस्ट करना'],
+                    correct: 1 },
+                { q: 'बेंडिंग लॉस किसमें होता है?', options: ['तांबे की तार', 'फाइबर ऑप्टिक', 'कोएक्सियल', 'ट्विस्टेड पेयर'],
+                    correct: 1 },
+                { q: 'POST का क्या अर्थ है?', options: ['Power-On Self Test', 'Power Off System Test',
+                        'Primary Operating System Test', 'None'
+                    ], correct: 0 },
+                { q: 'LCD में किसका उपयोग होता है?', options: ['LED', 'CCFL', 'प्लाज्मा', 'OLED'], correct: 1 },
+                { q: 'हॉट एयर का तापमान कितना होता है?', options: ['200°C', '300-350°C', '400°C', '500°C'],
+                    correct: 1 },
+                { q: 'DSO में क्या स्टोर होता है?', options: ['सिग्नल', 'वोल्टेज', 'वेवफॉर्म', 'सब कुछ'], correct: 2 },
+                { q: 'RCA कनेक्टर किसके लिए उपयोग होता है?', options: ['ऑडियो', 'वीडियो', 'ऑडियो+वीडियो', 'पावर'],
+                    correct: 2 },
+                { q: 'ट्रांजिस्टर कितने प्रकार के होते हैं?', options: ['NPN और PNP', 'PNP और NPN', 'दोनों', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'एटेन्यूएशन किसे कहते हैं?', options: ['सिग्नल बढ़ना', 'सिग्नल कम होना', 'सिग्नल रुकना', 'कोई नहीं'],
+                    correct: 1 },
+                { q: 'SMPS की दक्षता कितनी होती है?', options: ['60%', '70%', '80-85%', '90%'], correct: 2 },
+                { q: 'LED TV कितना बिजली खपत करता है?', options: ['कम', 'अधिक', 'बराबर', 'कोई नहीं'], correct: 0 },
+                { q: 'SMD कंपोनेंट कैसे लगाए जाते हैं?', options: ['सोल्डरिंग द्वारा', 'गोंद द्वारा', 'क्लिप द्वारा', 'स्क्रू द्वारा'],
+                    correct: 0 },
+                { q: 'CRO का पूरा नाम?', options: ['Cathode Ray Oscilloscope', 'Cathode Ray Oscillator',
+                        'Control Ray Oscilloscope', 'None'
+                    ], correct: 0 },
+                { q: 'RJ11 में कितने पिन होते हैं?', options: ['4', '6', '8', '10'], correct: 1 },
+                { q: 'मल्टीमीटर से क्या माप सकते हैं?', options: ['वोल्टेज', 'करंट', 'रेजिस्टेंस', 'सब कुछ'], correct: 3 },
+                { q: 'ऑडियो एम्पलीफायर का क्या काम?', options: ['सिग्नल बढ़ाना', 'सिग्नल कम करना', 'सिग्नल रोकना', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'प्रोब में attenuator का क्या काम?', options: ['सिग्नल कम करना', 'सिग्नल बढ़ाना', 'सिग्नल फिल्टर करना',
+                        'कोई नहीं'
+                    ], correct: 0 },
+                { q: 'फाइबर ऑप्टिक में किसका उपयोग होता है?', options: ['तांबा', 'कांच/प्लास्टिक', 'लोहा', 'एल्यूमीनियम'],
+                    correct: 1 },
+                { q: 'PC में SMPS खराब होने पर क्या होता है?', options: ['PC ON नहीं होता', 'PC धीमा होता है', 'PC गर्म होता है',
+                        'कोई नहीं'
+                    ], correct: 0 },
+                { q: 'HDMI केबल कितने चैनल ऑडियो सपोर्ट करता है?', options: ['2', '4', '8', 'असीमित'], correct: 2 },
+                { q: 'IPA सॉल्यूशन का क्या उपयोग?', options: ['साफ करना', 'सोल्डर करना', 'गर्म करना', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'DSO की मेमोरी में क्या स्टोर होता है?', options: ['वेवफॉर्म', 'वोल्टेज', 'सिग्नल', 'सब कुछ'],
+                    correct: 3 },
+                { q: 'फाइबर ऑप्टिक में सिग्नल कैसे जाता है?', options: ['बिजली से', 'प्रकाश से', 'रेडियो से', 'ध्वनि से'],
+                    correct: 1 },
+                { q: 'SMPS में कितने वोल्टेज आउटपुट होते हैं?', options: ['1', '2', '3', '4'], correct: 3 },
+                { q: 'LCD और LED में कौन पतला होता है?', options: ['LCD', 'LED', 'दोनों समान', 'कोई नहीं'], correct: 1 },
+                { q: 'सोल्डरिंग में किस धातु का उपयोग?', options: ['सोना', 'चांदी', 'टिन-सीसा', 'तांबा'], correct: 2 },
+                { q: 'CRO में वेवफॉर्म कैसे देखते हैं?', options: ['स्क्रीन पर', 'मीटर पर', 'डिजिटल डिस्प्ले पर', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'क्रिम्पिंग में क्या इस्तेमाल होता है?', options: ['टूल', 'सोल्डर', 'गोंद', 'टेप'], correct: 0 },
+                { q: 'डायोड को कैसे टेस्ट करें?', options: ['मल्टीमीटर से', 'LCR मीटर से', 'दोनों', 'कोई नहीं'],
+                    correct: 0 },
+                { q: 'OFC में बैंडविड्थ कितनी होती है?', options: ['कम', 'अधिक', 'बराबर', 'कोई नहीं'], correct: 1 },
+                { q: 'PC में POST बीप क्या दर्शाता है?', options: ['सही', 'फॉल्ट', 'दोनों', 'कोई नहीं'], correct: 0 },
+                { q: 'HDMI किस कंपनी ने बनाया?', options: ['Sony', 'Philips', 'Hitachi', 'सभी'], correct: 3 },
+                { q: 'SMD कंपोनेंट कैसे पहचानें?', options: ['आकार से', 'कोड से', 'रंग से', 'सबसे सही उत्तर है कोड से'],
+                    correct: 1 },
+                { q: 'DSO में कितने चैनल होते हैं?', options: ['1', '2', '4', 'सभी'], correct: 3 },
+                { q: 'फाइबर ऑप्टिक में कितने प्रकार होते हैं?', options: ['1', '2', '3', '4'], correct: 1 },
+                { q: 'SMPS में कौन-सा वोल्टेज सबसे कम होता है?', options: ['3.3V', '5V', '12V', '-12V'], correct: 0 },
+                { q: 'LED TV का मुख्य लाभ क्या है?', options: ['कम बिजली', 'पतला', 'उच्च कंट्रास्ट', 'सभी'], correct: 3 }
+            ];
 
-    <!-- ===== LIGHTBOX (FIXED) ===== -->
-    <div id="lightbox" class="lightbox">
-      <div class="loading-spinner" id="lightboxSpinner"></div>
-      <span class="close-lightbox" id="closeLightbox">&times;</span>
-      <img id="lightboxImg" src="" alt="Lightbox" />
-      <button class="lightbox-prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-      <button class="lightbox-next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </section>
+            // ============================================================
+            // DOM REFS
+            // ============================================================
+            const cardsGrid = document.getElementById('cardsGrid');
+            const revisionGrid = document.getElementById('revisionGrid');
+            const searchInput = document.getElementById('searchInput');
+            const darkToggle = document.getElementById('darkToggle');
+            const floatingBtn = document.getElementById('floatingBtn');
+            const cardCount = document.getElementById('cardCount');
 
-  <!-- ===== WHY CHOOSE ===== -->
-  <section id="why" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
-      <div class="why-grid">
-        <div class="why-card" data-aos="flip-up"><i class="fas fa-star"></i><h4>8+ Years Experience</h4><p>Trusted by hundreds</p></div>
-        <div class="why-card" data-aos="flip-up" data-aos-delay="50"><i class="fas fa-users"></i><h4>Professional Team</h4><p>Experts in photography</p></div>
-        <div class="why-card" data-aos="flip-up" data-aos-delay="100"><i class="fas fa-clock"></i><h4>Fast Delivery</h4><p>Sneak peek in 48 hrs</p></div>
-        <div class="why-card" data-aos="flip-up" data-aos-delay="150"><i class="fas fa-pen-fancy"></i><h4>Premium Editing</h4><p>Professional retouching</p></div>
-        <div class="why-card" data-aos="flip-up" data-aos-delay="200"><i class="fas fa-wallet"></i><h4>Affordable Pricing</h4><p>Luxury at best price</p></div>
-      </div>
-    </div>
-  </section>
+            // Quiz
+            const quizContainer = document.getElementById('quizContainer');
+            const startQuizBtn = document.getElementById('startQuizBtn');
+            const startQuizBtnNav = document.getElementById('startQuizBtnNav');
+            const nextQuizBtn = document.getElementById('nextQuizBtn');
+            const resetQuizBtn = document.getElementById('resetQuizBtn');
+            const quizQuestion = document.getElementById('quizQuestion');
+            const quizOptions = document.getElementById('quizOptions');
+            const quizTimer = document.getElementById('quizTimer');
+            const quizProgress = document.getElementById('quizProgress');
+            const quizResult = document.getElementById('quizResult');
+            const quizScore = document.getElementById('quizScore');
+            const quizRank = document.getElementById('quizRank');
+            const wrongAnswers = document.getElementById('wrongAnswers');
+            const certificateBox = document.getElementById('certificateBox');
+            const downloadCertBtn = document.getElementById('downloadCertBtn');
 
-  <!-- ===== PACKAGES ===== -->
-  <section id="packages" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Pricing Packages</h2>
-      <div class="package-grid">
-        <div class="package-card" data-aos="flip-up">
-          <div class="package-badge">Popular</div>
-          <h3>Basic</h3>
-          <p class="price">₹25,000</p>
-          <ul><li><i class="fas fa-check-circle"></i> 6 hours coverage</li><li><i class="fas fa-check-circle"></i> 200 edited photos</li><li><i class="fas fa-check-circle"></i> Online gallery</li></ul>
-          <a href="#contact" class="btn btn-primary">Book Now</a>
-        </div>
-        <div class="package-card featured" data-aos="flip-up" data-aos-delay="100">
-          <div class="package-badge">Best Value</div>
-          <h3>Standard</h3>
-          <p class="price">₹55,000</p>
-          <ul><li><i class="fas fa-check-circle"></i> 10 hours coverage</li><li><i class="fas fa-check-circle"></i> 400 edited photos</li><li><i class="fas fa-check-circle"></i> Cinematic highlight</li><li><i class="fas fa-check-circle"></i> Album design</li></ul>
-          <a href="#contact" class="btn btn-primary">Book Now</a>
-        </div>
-        <div class="package-card" data-aos="flip-up" data-aos-delay="200">
-          <div class="package-badge">Premium</div>
-          <h3>Premium</h3>
-          <p class="price">₹95,000</p>
-          <ul><li><i class="fas fa-check-circle"></i> Full day coverage</li><li><i class="fas fa-check-circle"></i> 600+ edited photos</li><li><i class="fas fa-check-circle"></i> Full film + raw</li><li><i class="fas fa-check-circle"></i> Drone & streaming</li></ul>
-          <a href="#contact" class="btn btn-primary">Book Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
+            // AI
+            const aiInput = document.getElementById('aiInput');
+            const aiAskBtn = document.getElementById('aiAskBtn');
+            const aiResponse = document.getElementById('aiResponse');
+            const aiAnswer = document.getElementById('aiAnswer');
 
-  <!-- ===== TESTIMONIALS ===== -->
-  <section id="testimonials" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Client Testimonials</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card" data-aos="zoom-in">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Vivek captured every moment beautifully. Highly recommend!"</p>
-          <h4>– Ananya & Rohan</h4>
-        </div>
-        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Absolutely professional and creative. Our film is treasure."</p>
-          <h4>– Priya & Arjun</h4>
-        </div>
-        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Best decision for our wedding. Made us feel like stars."</p>
-          <h4>– Sneha & Vikram</h4>
-        </div>
-      </div>
-    </div>
-  </section>
+            // ============================================================
+            // STATE
+            // ============================================================
+            let quizQuestions = [];
+            let currentIndex = 0;
+            let quizScoreCount = 0;
+            let quizTotal = 0;
+            let quizWrong = [];
+            let timerInterval = null;
+            let seconds = 0;
+            let quizStarted = false;
+            let selectedCount = 10;
 
-  <!-- ===== FAQ ===== -->
-  <section id="faq" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
-      <div class="faq-grid">
-        <div class="faq-item" data-aos="fade-right"><h3><i class="fas fa-calendar-alt"></i> How far in advance to book?</h3><p>3–6 months in advance, especially during wedding season.</p></div>
-        <div class="faq-item" data-aos="fade-left"><h3><i class="fas fa-plane"></i> Do you travel outside Bihar?</h3><p>Yes! Available for destination weddings across India.</p></div>
-        <div class="faq-item" data-aos="fade-right"><h3><i class="fas fa-clock"></i> Delivery time for photos?</h3><p>Sneak peek in 48 hrs, full gallery in 2–3 weeks.</p></div>
-        <div class="faq-item" data-aos="fade-left"><h3><i class="fas fa-file-video"></i> Do you provide raw footage?</h3><p>Included in Premium package. Can be added to others.</p></div>
-      </div>
-    </div>
-  </section>
+            // ============================================================
+            // RENDER PRACTICAL CARDS
+            // ============================================================
+            function renderCards(filter = '') {
+                const q = filter.trim().toLowerCase();
+                let filtered = practicals;
+                if (q) {
+                    filtered = practicals.filter(p =>
+                        p.title.toLowerCase().includes(q) ||
+                        p.materials.toLowerCase().includes(q) ||
+                        p.steps.some(s => s.toLowerCase().includes(q)) ||
+                        p.viva.some(v => v.q.toLowerCase().includes(q) || v.a.toLowerCase().includes(q)) ||
+                        p.points.toLowerCase().includes(q)
+                    );
+                }
+                cardsGrid.innerHTML = '';
+                if (filtered.length === 0) {
+                    cardsGrid.innerHTML = `
+                        <div class="no-match" style="grid-column:1/-1;">
+                            <div class="icon">🔍</div>
+                            <h3>कोई प्रैक्टिकल नहीं मिला</h3>
+                            <p style="color:var(--sub);">"${filter}" से संबंधित कोई प्रैक्टिकल नहीं है</p>
+                        </div>
+                    `;
+                } else {
+                    filtered.forEach((p, idx) => {
+                        const card = document.createElement('div');
+                        card.className = `practical-card fade-up delay-${(idx % 4) + 1}`;
+                        card.style.borderTop = `4px solid ${p.color}`;
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
-      <div class="contact-grid">
-        <div class="contact-info" data-aos="fade-right">
-          <h3>Let's Create Magic Together</h3>
-          <p>Reach out and let's make your wedding memories timeless.</p>
-          <div class="contact-item"><i class="fas fa-phone-alt"></i><div><span>Phone</span><a href="tel:+916209275635">+91 6209275635</a></div></div>
-          <div class="contact-item"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><a href="https://wa.me/916209275635" target="_blank">Chat on WhatsApp</a></div></div>
-          <div class="contact-item"><i class="fas fa-envelope"></i><div><span>Email</span><a href="mailto:vksir6206@gmail.com">vksir6206@gmail.com</a></div></div>
-          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><p>Sadpur, Begusarai, Bihar</p></div></div>
-          <div class="social-icons">
-            <a href="https://instagram.com/vivek_roy9765" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@viveksir-sw6dt?si=IQdvRlFMUW3P3EPl" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/916209275635" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="tel:+916209275635"><i class="fas fa-phone-alt"></i></a>
-          </div>
-        </div>
-        <div class="contact-form" data-aos="fade-left">
-          <form id="contactForm">
-            <div class="form-group"><input type="text" placeholder="Your Full Name" required /></div>
-            <div class="form-group"><input type="tel" placeholder="Phone Number" required /></div>
-            <div class="form-group"><input type="email" placeholder="Email Address" /></div>
-            <div class="form-group"><input type="date" placeholder="Wedding Date" /></div>
-            <div class="form-group"><textarea placeholder="Tell us about your wedding vision..." rows="4"></textarea></div>
-            <button type="submit" class="btn btn-primary">Send Inquiry <i class="fas fa-paper-plane"></i></button>
-          </form>
-        </div>
-      </div>
-      <div class="map-container" data-aos="fade-up">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28577.41461383285!2d86.458395!3d25.418314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f1f3c5e8c5c5c5%3A0x123456789abcdef!2sBegusarai%2C%20Bihar!5e0!3m2!1sen!2sin!4v1620000000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
-  </section>
+                        const vivaHtml = p.viva.map(v =>
+                            `<div class="viva-item"><strong>प्रश्न:</strong> ${v.q} <br> <strong>उत्तर:</strong> ${v.a}</div>`
+                        ).join('');
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <svg viewBox="0 0 100 100" width="50" height="50">
-              <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldRedFoot)" stroke-width="4" />
-              <circle cx="35" cy="50" r="14" fill="none" stroke="url(#goldRedFoot)" stroke-width="3" />
-              <circle cx="65" cy="50" r="14" fill="none" stroke="url(#goldRedFoot)" stroke-width="3" />
-              <text x="50" y="58" font-family="Poppins, sans-serif" font-size="28" font-weight="800" fill="#d4af37" text-anchor="middle">VS</text>
-              <defs><linearGradient id="goldRedFoot" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4af37"/><stop offset="100%" stop-color="#C41E3A"/></linearGradient></defs>
-            </svg>
-            <span>Vivek Studio</span>
-          </div>
-          <p>Capturing Emotions Forever ❤️</p>
-        </div>
-        <div class="footer-links"><h4>Quick Links</h4><a href="#hero">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a></div>
-        <div class="footer-links"><h4>Support</h4><a href="#contact">Contact</a><a href="#faq">FAQ</a><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
-        <div class="footer-social"><h4>Follow Us</h4><div class="social-icons"><a href="https://instagram.com/vivek_roy9765" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://youtube.com/@viveksir-sw6dt?si=IQdvRlFMUW3P3EPl" target="_blank"><i class="fab fa-youtube"></i></a><a href="https://wa.me/916209275635" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
-      </div>
-      <div class="footer-bottom"><p>&copy; 2026 <strong>Vivek Wedding Studio</strong>. All rights reserved. | Designed with ❤️ by Vivek Roy</p></div>
-    </div>
-  </footer>
+                        card.innerHTML = `
+                            <div class="card-header">
+                                <h3><i class="fas ${p.icon}" style="color:${p.color};margin-right:8px;"></i> ${p.title}</h3>
+                                <span class="badge">प्रैक्टिकल ${p.id}</span>
+                            </div>
+                            <div class="mat-list">
+                                <strong>🛠️ सामग्री :</strong> ${p.materials}
+                            </div>
+                            <ol class="step-list">
+                                ${p.steps.map(s => `<li>${s}</li>`).join('')}
+                            </ol>
+                            <div class="viva-box">
+                                <div class="viva-title">🗣️ VIVA प्रश्न-उत्तर</div>
+                                ${vivaHtml}
+                            </div>
+                            <div class="exam-points">
+                                <strong>📌 परीक्षा टिप्स :</strong> ${p.points}
+                            </div>
+                            <div class="progress-bar-wrap">
+                                <div class="label-row">
+                                    <span>प्रगति</span>
+                                    <span>${p.progress}%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="fill" style="width:${p.progress}%;"></div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="q-count"><i class="fas fa-question-circle"></i> ${p.viva.length} VIVA Q&A</span>
+                                <button class="open-btn ripple">Open <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        `;
+                        cardsGrid.appendChild(card);
+                    });
+                }
+                cardCount.textContent = `${filtered.length} प्रैक्टिकल`;
+            }
 
-  <!-- ===== FLOATING BUTTONS ===== -->
-  <div class="floating-buttons">
-    <a href="https://wa.me/916209275635" target="_blank" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+916209275635" class="float-btn call"><i class="fas fa-phone-alt"></i></a>
-  </div>
+            // ============================================================
+            // RENDER REVISION
+            // ============================================================
+            function renderRevision() {
+                revisionGrid.innerHTML = '';
+                practicals.forEach(p => {
+                    const item = document.createElement('div');
+                    item.className = 'revision-item';
+                    const short = p.points.split('।')[0] || p.points;
+                    item.innerHTML = `
+                        <strong>${p.title.substring(0, 30)}</strong>
+                        ${short}
+                    `;
+                    revisionGrid.appendChild(item);
+                });
+            }
 
-  <!-- ===== SCROLL TO TOP ===== -->
-  <button id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+            // ============================================================
+            // STATISTICS COUNTER
+            // ============================================================
+            function animateCounters() {
+                document.querySelectorAll('.stat-card .number').forEach(el => {
+                    const target = parseInt(el.dataset.count);
+                    let current = 0;
+                    const increment = Math.ceil(target / 40);
+                    const interval = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(interval);
+                        }
+                        el.textContent = current + (target === 98 ? '%' : '+');
+                    }, 30);
+                });
+            }
 
-  <!-- ===== SCRIPTS ===== -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // ============================================================
-    // FINAL – COMPLETE JAVASCRIPT (100% BUG-FREE)
-    // ============================================================
+            // ============================================================
+            // DARK MODE
+            // ============================================================
+            function toggleDark() {
+                document.body.classList.toggle('dark');
+                const isDark = document.body.classList.contains('dark');
+                darkToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('iti-dark', isDark ? 'dark' : 'light');
+            }
 
-    // ===== PRELOADER =====
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      preloader.classList.add('fade');
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 800);
-    });
+            function initDark() {
+                if (localStorage.getItem('iti-dark') === 'dark') {
+                    document.body.classList.add('dark');
+                    darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                }
+            }
 
-    // ===== NAVBAR SCROLL =====
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.pageYOffset > 50);
-    });
+            // ============================================================
+            // BOTTOM NAV
+            // ============================================================
+            document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.bottom-nav .nav-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    const tab = this.dataset.tab;
+                    if (tab === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
+                    else if (tab === 'theory') document.getElementById('subjectsSection').scrollIntoView({ behavior: 'smooth' });
+                    else if (tab === 'mock') document.getElementById('mockTestSection').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
 
-    // ===== HAMBURGER =====
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
+            // ============================================================
+            // FLOATING BUTTON
+            // ============================================================
+            floatingBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // ===== DARK/LIGHT MODE =====
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const icon = themeToggle.querySelector('i');
-      icon.classList.toggle('fa-moon');
-      icon.classList.toggle('fa-sun');
-      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-    });
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light-mode');
-      const icon = themeToggle.querySelector('i');
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    }
+            // ============================================================
+            // MOCK TEST
+            // ============================================================
+            function shuffleArray(arr) {
+                for (let i = arr.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+                }
+                return arr;
+            }
 
-    // ============================================================
-    // ===== LIGHTBOX – ULTIMATE FIX (Tap works on mobile) =====
-    // ============================================================
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('closeLightbox');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const spinner = document.getElementById('lightboxSpinner');
+            function startQuiz() {
+                const shuffled = shuffleArray([...allQuestions]);
+                quizQuestions = shuffled.slice(0, Math.min(selectedCount, shuffled.length));
+                if (quizQuestions.length === 0) return;
+                currentIndex = 0;
+                quizScoreCount = 0;
+                quizWrong = [];
+                quizTotal = quizQuestions.length;
+                quizStarted = true;
+                seconds = 0;
+                certificateBox.classList.remove('active');
 
-    let galleryImages = [];
-    let currentIndex = 0;
-    let isOpen = false;
+                quizContainer.classList.add('active');
+                quizResult.classList.remove('active');
+                startQuizBtn.textContent = '⏳ टेस्ट चल रहा...';
+                startQuizBtn.disabled = true;
+                startQuizBtnNav.textContent = '⏳ टेस्ट...';
+                startQuizBtnNav.disabled = true;
 
-    // Collect all gallery image sources
-    document.querySelectorAll('.gallery-item img').forEach(img => {
-      galleryImages.push(img.src);
-    });
+                if (timerInterval) clearInterval(timerInterval);
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+                    const secs = String(seconds % 60).padStart(2, '0');
+                    quizTimer.textContent = `⏱️ ${mins}:${secs}`;
+                }, 1000);
 
-    // Function to open lightbox
-    function openLightbox(src, index) {
-      currentIndex = index;
-      isOpen = true;
-      lightbox.classList.add('show');
-      document.body.style.overflow = 'hidden';
-      spinner.style.display = 'block';
-      lightboxImg.style.display = 'none';
-      lightboxImg.src = src;
-    }
+                showQuestion();
+            }
 
-    // Attach event to each gallery item – using both click and touchstart with a guard
-    document.querySelectorAll('.gallery-item').forEach((item, index) => {
-      // Use a flag to prevent double-firing on mobile (touch + click)
-      let isTouching = false;
+            function showQuestion() {
+                if (currentIndex >= quizQuestions.length) { endQuiz(); return; }
+                const q = quizQuestions[currentIndex];
+                quizQuestion.textContent = `${currentIndex+1}. ${q.q}`;
+                quizProgress.textContent = `प्रश्न ${currentIndex+1}/${quizQuestions.length}`;
 
-      const handler = function(e) {
-        e.preventDefault();
-        // If this is a touch event, set flag
-        if (e.type === 'touchstart') {
-          isTouching = true;
-        }
-        // On click, if it's a touch device, we might get both events, so we check flag
-        if (e.type === 'click' && isTouching) {
-          isTouching = false; // reset
-          return; // skip the click, already handled by touchstart
-        }
-        const img = this.querySelector('img');
-        if (img) {
-          openLightbox(img.src, index);
-        }
-        // reset flag after a small delay
-        setTimeout(() => { isTouching = false; }, 100);
-      };
+                let html = '';
+                q.options.forEach((opt, idx) => {
+                    const letter = String.fromCharCode(65 + idx);
+                    html += `
+                        <label>
+                            <input type="radio" name="quizOpt" value="${idx}" />
+                            ${letter}. ${opt}
+                        </label>
+                    `;
+                });
+                quizOptions.innerHTML = html;
 
-      // Add both listeners
-      item.addEventListener('click', handler);
-      item.addEventListener('touchstart', handler, { passive: false });
-    });
+                quizOptions.querySelectorAll('input[type="radio"]').forEach(input => {
+                    input.addEventListener('change', function() {
+                        const selected = parseInt(this.value);
+                        const correct = quizQuestions[currentIndex].correct;
+                        const labels = quizOptions.querySelectorAll('label');
+                        labels.forEach((label, idx) => {
+                            if (idx === correct) {
+                                label.style.borderColor = '#22a65a';
+                                label.style.background = '#e6f7ec';
+                            } else if (idx === selected && selected !== correct) {
+                                label.style.borderColor = '#ea4335';
+                                label.style.background = '#fde8e8';
+                            }
+                        });
+                        quizOptions.querySelectorAll('input').forEach(inp => inp.disabled = true);
 
-    // Image load handler
-    lightboxImg.addEventListener('load', function() {
-      spinner.style.display = 'none';
-      lightboxImg.style.display = 'block';
-    });
+                        if (selected === correct) quizScoreCount++;
+                        else {
+                            quizWrong.push({
+                                question: quizQuestions[currentIndex].q,
+                                yourAnswer: quizQuestions[currentIndex].options[selected],
+                                correctAnswer: quizQuestions[currentIndex].options[correct]
+                            });
+                        }
 
-    // Fallback if image fails to load
-    lightboxImg.addEventListener('error', function() {
-      spinner.style.display = 'none';
-      lightboxImg.style.display = 'block';
-      lightboxImg.src =
-        'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a1a1a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Poppins%22 font-size=%2222%22 fill=%22%23d4af37%22 text-anchor=%22middle%22 dy=%22.3em%22%3E📸 Photo%3C/text%3E%3C/svg%3E';
-    });
+                        setTimeout(() => {
+                            if (currentIndex < quizQuestions.length - 1) { currentIndex++;
+                                showQuestion(); } else endQuiz();
+                        }, 700);
+                    });
+                });
+            }
 
-    // Close functions
-    function closeLightboxFn() {
-      lightbox.classList.remove('show');
-      document.body.style.overflow = '';
-      isOpen = false;
-    }
+            function endQuiz() {
+                if (timerInterval) clearInterval(timerInterval);
+                quizStarted = false;
+                startQuizBtn.textContent = '▶️ शुरू करें';
+                startQuizBtn.disabled = false;
+                startQuizBtnNav.textContent = '📝 टेस्ट';
+                startQuizBtnNav.disabled = false;
 
-    closeBtn.addEventListener('click', closeLightboxFn);
-    lightbox.addEventListener('click', function(e) {
-      if (e.target === lightbox) closeLightboxFn();
-    });
+                quizResult.classList.add('active');
+                const pct = Math.round((quizScoreCount / quizTotal) * 100);
+                quizScore.textContent = `स्कोर: ${quizScoreCount}/${quizTotal} (${pct}%)`;
 
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-      if (!isOpen) return;
-      if (e.key === 'Escape') closeLightboxFn();
-      if (e.key === 'ArrowLeft') navigateLightbox(-1);
-      if (e.key === 'ArrowRight') navigateLightbox(1);
-    });
+                let rank = '--';
+                if (pct >= 90) rank = '🥇 A+ (उत्कृष्ट)';
+                else if (pct >= 75) rank = '🥈 A (बहुत अच्छा)';
+                else if (pct >= 60) rank = '🥉 B (अच्छा)';
+                else if (pct >= 40) rank = '📘 C (सुधार की जरूरत)';
+                else rank = '📕 D (दोबारा पढ़ें)';
+                quizRank.textContent = `रैंक: ${rank}`;
 
-    // Previous / Next buttons
-    prevBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      navigateLightbox(-1);
-    });
-    nextBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      navigateLightbox(1);
-    });
+                let wrongHtml = '';
+                if (quizWrong.length > 0) {
+                    wrongHtml = '<h4 style="margin-top:12px;">❌ गलत उत्तर:</h4>';
+                    quizWrong.forEach(w => {
+                        wrongHtml += `
+                            <div style="padding:8px;background:var(--bg);margin:6px 0;border-radius:8px;border-left:4px solid #ea4335;">
+                                <strong>${w.question}</strong><br>
+                                आपका: ${w.yourAnswer} (गलत) → सही: ${w.correctAnswer}
+                            </div>
+                        `;
+                    });
+                } else if (quizTotal > 0) {
+                    wrongHtml = '<p style="color:#22a65a;font-weight:600;">🎉 सभी उत्तर सही! बहुत बढ़िया!</p>';
+                }
+                wrongAnswers.innerHTML = wrongHtml;
 
-    function navigateLightbox(direction) {
-      if (galleryImages.length === 0) return;
-      currentIndex = (currentIndex + direction + galleryImages.length) % galleryImages.length;
-      const newSrc = galleryImages[currentIndex];
-      spinner.style.display = 'block';
-      lightboxImg.style.display = 'none';
-      lightboxImg.src = newSrc;
-    }
+                if (pct >= 60) certificateBox.classList.add('active');
+            }
 
-    // ============================================================
-    // ===== COUNTER ANIMATION =====
-    // ============================================================
-    const counters = document.querySelectorAll('.counter');
-    let counted = false;
+            // ============================================================
+            // CERTIFICATE DOWNLOAD
+            // ============================================================
+            downloadCertBtn.addEventListener('click', function() {
+                const win = window.open('', '_blank');
+                win.document.write(`
+                    <html><head><title>Certificate</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 40px; text-align: center; background:#f8fafc; }
+                        .cert { border: 4px solid #2563EB; padding: 40px; border-radius: 20px; max-width: 500px; margin: auto; background:white; }
+                        h1 { color: #2563EB; }
+                        .icon { font-size: 60px; }
+                    </style>
+                    </head>
+                    <body>
+                        <div class="cert">
+                            <div class="icon">🏆</div>
+                            <h1>ITI Exam Theory</h1>
+                            <h2>प्रमाणपत्र</h2>
+                            <p>आपने मॉक टेस्ट पास किया!</p>
+                            <p style="font-size:18px;">${quizScore.textContent}</p>
+                            <p style="color:#666;">${quizRank.textContent}</p>
+                            <p style="margin-top:20px;color:#999;">${new Date().toLocaleDateString()}</p>
+                        </div>
+                    </body></html>
+                `);
+                win.document.close();
+                setTimeout(() => win.print(), 500);
+            });
 
-    function startCounters() {
-      if (counted) return;
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        let current = 0;
-        const increment = target / 80;
-        const updateCounter = () => {
-          current += increment;
-          if (current < target) {
-            counter.innerText = Math.ceil(current);
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.innerText = target;
-          }
-        };
-        updateCounter();
-      });
-      counted = true;
-    }
+            // ============================================================
+            // AI DOUBT SOLVER
+            // ============================================================
+            function askAI() {
+                const query = aiInput.value.trim().toLowerCase();
+                if (!query) { alert('कृपया कोई सवाल पूछें!'); return; }
+                aiResponse.classList.add('active');
 
-    const statsSection = document.getElementById('stats');
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) startCounters();
-      });
-    }, { threshold: 0.3 });
-    if (statsSection) statsObserver.observe(statsSection);
+                let answer = 'मुझे माफ करें, मुझे इस सवाल का जवाब नहीं पता। कृपया दूसरा सवाल पूछें।';
 
-    // ============================================================
-    // ===== SCROLL TO TOP =====
-    // ============================================================
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      scrollTopBtn.classList.toggle('show', window.pageYOffset > 500);
-    });
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+                const keywords = {
+                    'smps': 'SMPS (Switched Mode Power Supply) एक पावर सप्लाई है जो स्विचिंग तकनीक से DC वोल्टेज बनाता है। यह 3.3V, 5V, 12V, -12V आउटपुट देता है और 80-85% दक्षता रखता है।',
+                    'ofc': 'OFC (Optical Fiber Communication) में प्रकाश का उपयोग डाटा ट्रांसमिशन के लिए होता है। इसमें Total Internal Reflection का सिद्धांत काम करता है।',
+                    'lcd': 'LCD (Liquid Crystal Display) में CCFL बैकलाइट का उपयोग होता है। यह LED से पुरानी तकनीक है।',
+                    'led': 'LED TV में LED बैकलाइट का उपयोग होता है। यह पतला, कम बिजली लेता है और उच्च कंट्रास्ट देता है।',
+                    'smd': 'SMD (Surface Mount Device) छोटे कंपोनेंट होते हैं जो PCB की सतह पर सोल्डर किए जाते हैं। इन्हें हॉट एयर से सोल्डर किया जाता है।',
+                    'dso': 'DSO (Digital Storage Oscilloscope) डिजिटल ऑसिलोस्कोप है जो वेवफॉर्म को स्टोर और माप सकता है।',
+                    'cro': 'CRO (Cathode Ray Oscilloscope) एनालॉग ऑसिलोस्कोप है जो इलेक्ट्रॉन बीम से वेवफॉर्म दिखाता है।',
+                    'rj45': 'RJ45 में 8 पिन होते हैं। इसका उपयोग नेटवर्किंग (Ethernet) में होता है।',
+                    'rj11': 'RJ11 में 4 या 6 पिन होते हैं। इसका उपयोग टेलीफोन में होता है।',
+                    'crimping': 'क्रिम्पिंग टूल का उपयोग कनेक्टर को केबल से मजबूती से जोड़ने के लिए होता है।',
+                    'multimeter': 'मल्टीमीटर से वोल्टेज, करंट, रेजिस्टेंस, डायोड, ट्रांजिस्टर आदि माप सकते हैं।',
+                    'soldering': 'सोल्डरिंग में टिन-सीसा मिश्र धातु का उपयोग होता है। फ्लक्स (रोजिन) ऑक्साइड हटाने के लिए लगाया जाता है।'
+                };
 
-    // ============================================================
-    // ===== CONTACT FORM =====
-    // ============================================================
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = this.querySelector('input[type="text"]').value;
-      alert(`✅ Thank you, ${name}! \n\nVivek Roy will contact you within 24 hours. \n📞 +91 6209275635 \n📧 vksir6206@gmail.com`);
-      this.reset();
-    });
+                for (const [key, value] of Object.entries(keywords)) {
+                    if (query.includes(key)) { answer = value; break; }
+                }
 
-    // ============================================================
-    // ===== SMOOTH SCROLL =====
-    // ============================================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+                if (answer === 'मुझे माफ करें, मुझे इस सवाल का जवाब नहीं पता। कृपया दूसरा सवाल पूछें।') {
+                    if (query.includes('क्या है') || query.includes('होता है')) {
+                        answer = 'यह ITI इलेक्ट्रॉनिक्स मैकेनिक का प्रैक्टिकल सवाल है। ऊपर दिए गए प्रैक्टिकल्स में इस टॉपिक को खोजें या VIVA प्रश्नों में उत्तर देखें।';
+                    }
+                }
+                aiAnswer.textContent = answer;
+            }
 
-    // ============================================================
-    // ===== INIT AOS =====
-    // ============================================================
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 50,
-      easing: 'ease-in-out',
-      disable: window.innerWidth < 768 ? 'mobile' : false
-    });
+            // ============================================================
+            // EVENT LISTENERS
+            // ============================================================
+            searchInput.addEventListener('input', function() { renderCards(this.value); });
 
-    console.log('✅ Vivek Wedding Studio – FINAL VERSION loaded successfully!');
-    console.log('📸 Capturing Emotions Forever ❤️');
-    console.log('📱 Lightbox works on tap – no hold required!');
-  </script>
+            darkToggle.addEventListener('click', toggleDark);
+
+            document.querySelectorAll('.quiz-btn[data-questions]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.quiz-btn[data-questions]').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedCount = parseInt(this.dataset.questions);
+                });
+            });
+
+            startQuizBtn.addEventListener('click', function() { if (!quizStarted) startQuiz(); });
+            startQuizBtnNav.addEventListener('click', function() {
+                document.getElementById('mockTestSection').scrollIntoView({ behavior: 'smooth' });
+                if (!quizStarted) startQuiz();
+            });
+
+            resetQuizBtn.addEventListener('click', function() {
+                if (timerInterval) clearInterval(timerInterval);
+                quizStarted = false;
+                quizContainer.classList.remove('active');
+                startQuizBtn.textContent = '▶️ शुरू करें';
+                startQuizBtn.disabled = false;
+                startQuizBtnNav.textContent = '📝 टेस्ट';
+                startQuizBtnNav.disabled = false;
+                quizResult.classList.remove('active');
+                quizTimer.textContent = '⏱️ 00:00';
+                certificateBox.classList.remove('active');
+            });
+
+            document.getElementById('scrollToCards').addEventListener('click', function() {
+                document.getElementById('subjectsSection').scrollIntoView({ behavior: 'smooth' });
+            });
+            document.getElementById('scrollToQuiz').addEventListener('click', function() {
+                document.getElementById('mockTestSection').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            aiAskBtn.addEventListener('click', askAI);
+            aiInput.addEventListener('keyup', function(e) { if (e.key === 'Enter') askAI(); });
+
+            // Open button on cards
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest('.open-btn');
+                if (btn) {
+                    const card = btn.closest('.practical-card');
+                    const title = card.querySelector('h3')?.textContent || '';
+                    searchInput.value = title;
+                    renderCards(title);
+                    document.getElementById('subjectsSection').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            // ============================================================
+            // INIT
+            // ============================================================
+            renderCards();
+            renderRevision();
+            initDark();
+            animateCounters();
+
+            console.log('✅ ITI Exam Theory 2026 Complete Loaded!');
+            console.log(`📚 ${practicals.length} Practicals, ${allQuestions.length} Questions`);
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+
+        })();
+    </script>
 </body>
 </html>
